@@ -59,7 +59,10 @@ var fy = Math.random() * (1920/6 - 1) + 1;
 
 console.log(Math.round(fx),Math.round(fy),Math.round(k),);
 
+
 function draw() {
+  canvas.mouseOut(endPath);
+
   translate(fx,fy)
   scale(1/k)
 
