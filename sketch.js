@@ -52,26 +52,29 @@ function startPath() {
 function endPath() {
   isDrawing = false;
 }
-var k = Math.random() * (3 - 2) + 2;
-var fx = Math.random() * (1080/6 - 1) + 1;
+
+var k  = Math.random() * (3 - 2) + 2;            // creo variabili randomiche per scalare e spostare lo sketch da completare - scale tra 1/3 e 1/2 [da definire meglio]
+var fx = Math.random() * (1080/6 - 1) + 1;      // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
 var fy = Math.random() * (1920/6 - 1) + 1;
 
-
-console.log(Math.round(fx),Math.round(fy),Math.round(k),);
-
+console.log(Math.round(fx),Math.round(fy),Math.round(k));
 
 function draw() {
+
   canvas.mouseOut(endPath);
 
-  translate(fx,fy)
-  scale(1/k)
-
+  translate(fx,fy); // traslazione dello sketch complessivo
+  scale(1/k)  ;     // scale dello sketch
 
   background('tomato');
+  fill('gold')
+  noStroke()
+  rectMode(CORNER)
+  rect(0,0,windowWidth/2.2,windowHeight/2.2) // rettangolo funge da sfondo del canvas originale, il fattore scale 2.2 funziona ma non si sa bene il perchè, k invece sfattona
 
   if (isDrawing) {
     var point = {
-      x: (mouseX-fx)*k,
+      x: (mouseX-fx)*k,   // compensazione di traslazione e sketch precedente, sia in x che in y
       y: (mouseY-fy)*k
     };
     currentPath.push(point);
@@ -85,11 +88,7 @@ function draw() {
 
     beginShape();
     for (var j = 0; j < path.length; j++) {
-      // if (mouseIsPressed) {
           vertex(path[j].x, path[j].y);
-      // } else {
-      //   vertex(path[j].x / k + fx, path[j].y / k + fy);
-      // }
     }
     endShape();
   }
