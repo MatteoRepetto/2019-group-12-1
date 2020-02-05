@@ -55,7 +55,6 @@ function setup() {
 var iterator = 0;
 
 function draw() {
-<<<<<<< HEAD
   //updating a semitransparent background for a trail effect
   background('rgba(4, 5, 28, 0.05)');
 
@@ -73,15 +72,13 @@ function draw() {
   textSize(20);
   textAlign(CENTER);
   text("by Group 12: \n Emanuele Ghebaur, Beatrice Foresti, Pietro Forino, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
-=======
-    iterator ++;
-      var x = noise(iterator/200 + 100) * height;
-      var y = noise(iterator/100) * width;
+  iterator++;
+  var x = noise(iterator / 200 + 100) * height;
+  var y = noise(iterator / 100) * width;
 
-      noStroke();
-      fill(143, 202, 226, 100);
-      ellipse(x, y, 10);
->>>>>>> 95cabd8b7eace9e43d08110372a9d052ad76099b
+  noStroke();
+  fill(143, 202, 226, 100);
+  ellipse(x, y, 10);
 }
 
 function openScribble() {
