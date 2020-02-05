@@ -53,9 +53,10 @@ function endPath() {
   isDrawing = false;
 }
 
-var k  = Math.random() * (3 - 2) + 2;            // creo variabili randomiche per scalare e spostare lo sketch da completare - scale tra 1/3 e 1/2 [da definire meglio]
-var fx = Math.random() * (1080/6 - 1) + 1;      // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
-var fy = Math.random() * (1920/6 - 1) + 1;
+var k  = Math.random() * (4 - 2.5) + 2;                    // creo variabili randomiche per scalare e spostare lo sketch da completare - scale tra 1/3 e 1/2 [da definire meglio]
+var fx = Math.random() * (1080/6*((k-1)/k) - 1) + 1;       // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
+var fy = Math.random() * (1920/6*((k-1)/k) - 1) + 1;
+// var r  = Math.random() * (60 + 60) + 60;
 
 console.log(Math.round(fx),Math.round(fy),Math.round(k));
 
@@ -64,13 +65,13 @@ function draw() {
   canvas.mouseOut(endPath);
 
   translate(fx,fy); // traslazione dello sketch complessivo
-  scale(1/k)  ;     // scale dello sketch
+  scale(1/k);     // scale dello sketch
+  // rotate(r)
 
   background('tomato');
   fill('gold')
-  noStroke()
   rectMode(CORNER)
-  rect(0,0,windowWidth/2.2,windowHeight/2.2) // rettangolo funge da sfondo del canvas originale, il fattore scale 2.2 funziona ma non si sa bene il perchè, k invece sfattona
+  rect(0,0,windowHeight/2.2,windowWidth/2.2) // rettangolo funge da sfondo del canvas originale, il fattore scale 2.2 funziona ma non si sa bene il perchè, k invece sfattona. Bisogna scambiare height e width per fatlo andare
 
   if (isDrawing) {
     var point = {
