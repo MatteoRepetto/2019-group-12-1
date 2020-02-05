@@ -1,4 +1,3 @@
-
 var database;
 
 var drawing = [];
@@ -6,7 +5,7 @@ var currentPath = [];
 var isDrawing = false;
 
 function setup() {
-  canvas = createCanvas(1080/4, 1920/4);
+  canvas = createCanvas(1080 / 4, 1920 / 4);
 
   canvas.mousePressed(startPath);
   canvas.parent('canvascontainer');
@@ -28,6 +27,7 @@ function setup() {
     messagingSenderId: "646981921563",
     appId: "1:646981921563:web:94ada1169cb912296801be"
   };
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   database = firebase.database();
@@ -53,14 +53,13 @@ function endPath() {
   isDrawing = false;
 }
 var k = Math.random() * (3 - 2) + 2;
-var fx = Math.random() * (1080/4 - 1) + 1;
-var fy = Math.random() * (1920/4 - 1) + 1;
+var fx = Math.random() * (1080 / 4 - 1) + 1;
+var fy = Math.random() * (1920 / 4 - 1) + 1;
 
 
-console.log(Math.round(fx),Math.round(fy),Math.round(k),);
+console.log(Math.round(fx), Math.round(fy), Math.round(k), );
 
 function draw() {
-
 
   background('tomato');
 
@@ -81,7 +80,7 @@ function draw() {
     beginShape();
     for (var j = 0; j < path.length; j++) {
       if (mouseIsPressed) {
-          vertex(path[j].x, path[j].y);
+        vertex(path[j].x, path[j].y);
       } else {
         vertex(path[j].x / k + fx, path[j].y / k + fy);
       }
