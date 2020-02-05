@@ -1,3 +1,4 @@
+
 var database;
 
 var drawing = [];
@@ -5,7 +6,7 @@ var currentPath = [];
 var isDrawing = false;
 
 function setup() {
-  canvas = createCanvas(1080 / 4, 1920 / 4);
+  canvas = createCanvas(1080/4, 1920/4);
 
   canvas.mousePressed(startPath);
   canvas.parent('canvascontainer');
@@ -27,7 +28,6 @@ function setup() {
     messagingSenderId: "646981921563",
     appId: "1:646981921563:web:94ada1169cb912296801be"
   };
-
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   database = firebase.database();
@@ -53,20 +53,23 @@ function endPath() {
   isDrawing = false;
 }
 var k = Math.random() * (3 - 2) + 2;
-var fx = Math.random() * (1080 / 4 - 1) + 1;
-var fy = Math.random() * (1920 / 4 - 1) + 1;
+var fx = Math.random() * (1080/6 - 1) + 1;
+var fy = Math.random() * (1920/6 - 1) + 1;
 
 
-console.log(Math.round(fx), Math.round(fy), Math.round(k), );
+console.log(Math.round(fx),Math.round(fy),Math.round(k),);
 
 function draw() {
+  translate(fx,fy)
+  scale(1/k)
+
 
   background('tomato');
 
   if (isDrawing) {
     var point = {
-      x: mouseX,
-      y: mouseY
+      x: (mouseX-fx)*k,
+      y: (mouseY-fy)*k
     };
     currentPath.push(point);
   }
@@ -79,11 +82,11 @@ function draw() {
 
     beginShape();
     for (var j = 0; j < path.length; j++) {
-      if (mouseIsPressed) {
-        vertex(path[j].x, path[j].y);
-      } else {
-        vertex(path[j].x / k + fx, path[j].y / k + fy);
-      }
+      // if (mouseIsPressed) {
+          vertex(path[j].x, path[j].y);
+      // } else {
+      //   vertex(path[j].x / k + fx, path[j].y / k + fy);
+      // }
     }
     endShape();
   }
@@ -93,7 +96,8 @@ function saveDrawing() {
   var ref = database.ref('drawings');
   var data = {
     name: 'ScribbleLoop',
-    drawing: drawing
+    drawing: drawing,
+    position: random(10)
   };
   var result = ref.push(data, dataSent);
   console.log(result.key);
@@ -115,12 +119,13 @@ function gotData(data) {
   var keys = Object.keys(drawings);
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
-    //console.log(key);
+
+    console.log(key);
     var li = createElement('li', '');
     li.class('listing');
-    // var ahref = createA('#', key);
-    // ahref.mousePressed(showDrawing);
-    // ahref.parent(li);
+    var ahref = createA('#', key);
+    ahref.mousePressed(showDrawing);
+    ahref.parent(li);
 
     var perma = createA('?id=' + key, 'permalink');
     perma.parent(li);
@@ -136,14 +141,16 @@ function errData(err) {
 
 function showDrawing(key) {
   //console.log(arguments);
-  if (key instanceof MouseEvent) {
-    key = this.html();
-  }
+  // if (key instanceof MouseEvent) {
+     // key = this.html();
+  // }
 
   var ref = database.ref('drawings/' + key);
+  translate(100,108)
   ref.once('value', oneDrawing, errData);
 
   function oneDrawing(data) {
+    translate(200,108)
     var dbdrawing = data.val();
     drawing = dbdrawing.drawing;
 
