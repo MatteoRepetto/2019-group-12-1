@@ -8,6 +8,7 @@ function preload() {
 }
 
 function setup() {
+
     createCanvas(windowWidth, windowHeight);
     background("black");
 
@@ -58,8 +59,15 @@ function setup() {
 
 }
 
-function draw() {
+var iterator = 0;
 
+function draw() {
+    iterator ++;
+      var x = noise(iterator/200 + 100) * height;
+      var y = noise(iterator/100) * width;
+
+      noStroke();
+      ellipse(x, y, 10);
 }
 
 function openScribble() {
