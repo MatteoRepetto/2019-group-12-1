@@ -67,6 +67,7 @@ function draw() {
       var y = noise(iterator/100) * width;
 
       noStroke();
+      fill(143, 202, 226, 100);
       ellipse(x, y, 10);
 }
 
