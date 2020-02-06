@@ -24,7 +24,7 @@ function setup() {
     button1.mouseOver(changeColor1);
     button1.mouseOut(beginningColor1);
 
-    button2 = createButton("Learn more");
+    button2 = createButton("Learn More");
     button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.2);
     button2.size(200, 50);
     button2.mousePressed(openAbout);
@@ -59,7 +59,7 @@ function draw() {
 
     iterator++;
     var x = noise(iterator / 200 + 400) * height;
-    var y = (noise(iterator / 500 + 2000) * width) -300;
+    var y = (noise(iterator / 500 + 2000) * width) - 300;
     noStroke();
     fill("#ffb3ff");
     ellipse(x, y, 20);
@@ -76,10 +76,8 @@ function draw() {
     textFont(myFont);
     textSize(20);
     textAlign(CENTER);
-    text("Project by Group 12: \n Emanuele Ghebaur, Beatrice Foresti, Pietro Forino, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
-    iterator++;
-    var x = noise(iterator / 200 + 100) * height;
-    var y = noise(iterator / 100) * width;
+    text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
+
 }
 
 function openScribble() {
