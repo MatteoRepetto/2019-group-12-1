@@ -62,19 +62,18 @@ function setup() {
 var iterator = 0;
 
 function draw() {
-    iterator ++;
-      var x = noise(iterator/200 + 100) * height;
-      var y = noise(iterator/100) * width;
+    iterator++;
+    var x = noise(iterator / 200 + 100) * height;
+    var y = noise(iterator / 100) * width;
 
-      noStroke();
-      fill(143, 202, 226, 100);
-      ellipse(x, y, 10);
+    noStroke();
+    fill(143, 202, 226, 100);
+    ellipse(x, y, 10);
 }
 
 function openScribble() {
     window.open("scribble.html", "_self");
 }
-
 
 function openCourse() {
     window.open("https://drawwithcode.github.io/2019/");
