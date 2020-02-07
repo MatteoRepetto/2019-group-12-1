@@ -4,6 +4,7 @@ function preload() {
 
     myFont = loadFont('./assets/CircularStd-Book.otf');
     logo = loadImage("./assets/logo.png");
+    clap = loadImage("./assets/clap.png");
 
 }
 
@@ -56,9 +57,14 @@ function draw() {
     fill("#9fdfff");
     ellipse(a, b, 20);
 
+
     imageMode(CENTER);
     logo.resize(0, 80);
     image(logo, windowWidth / 2, windowHeight / 10);
+
+    imageMode(CENTER);
+    clap.resize(70, 70);
+    image(clap, windowWidth / 2, windowHeight / 10 * 2.2);
 
     fill("#9fdfff");
     textFont(myFont);
