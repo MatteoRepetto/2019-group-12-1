@@ -1,5 +1,3 @@
-//PAGINA ABOUT
-
 var myFont;
 
 function preload() {
@@ -17,15 +15,18 @@ function setup() {
 
     home = createButton("Return to Home");
     home.position(windowWidth / 2-100, windowHeight / 10 * 9);
-    home.size(200, 50);
     home.mousePressed(goHome);
-    home.style('background-color', "black");
-    home.style("color", "#ffb3ff");
-    home.style("border-color", "#9fdfff");
-    home.style("font-size", "15px");
-    home.style("font-family", "CircularStd-Book");
-    home.mouseOver(changeColor1);
-    home.mouseOut(beginningColor1);
+
+    selectAll("button").forEach(item => {
+      item.size(200, 50);
+      item.style('background-color', "black");
+      item.style("color", "#ffb3ff");
+      item.style("border-color", "#9fdfff");
+      item.style("font-size", "15px");
+      item.style("font-family", "CircularStd-Book");
+      item.mouseOver(changeColor);
+      item.mouseOut(beginningColor);
+      });
 
 }
 
@@ -73,12 +74,12 @@ function goHome() {
     window.open("index.html", "_self");
 }
 
-function changeColor1() {
-    home.style('background-color', "#3f3f3f");
+function changeColor() {
+    this.style('background-color', "#3f3f3f");
 }
 
-function beginningColor1() {
-    home.style('background-color', "black");
+function beginningColor() {
+    this.style('background-color', "black");
 }
 
 function windowResized() {
