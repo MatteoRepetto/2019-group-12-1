@@ -6,6 +6,7 @@ function preload() {
 
     myFont = loadFont('./assets/CircularStd-Book.otf');
     logo = loadImage("./assets/logo.png");
+    authors = loadImage("./assets/autori.png");
 
 }
 
@@ -51,6 +52,9 @@ function draw() {
     logo.resize(0, 80);
     image(logo, windowWidth / 2, windowHeight / 10);
 
+    authors.resize(0, 200);
+    image(authors, windowWidth / 2, windowHeight / 10 * 7.7);
+
     fill("#9fdfff");
     textFont(myFont);
     textSize(20);
@@ -58,7 +62,7 @@ function draw() {
     text("While you are waiting for the subway, while you are ''studying'' for the exam, \nwhile you are waiting for your girlfriend or while you are doing that big one, \nScribble Loop will be there to take your hand and bring you to a total waste of time. \n\nScribble Loop is a web platform that allows everyone to create infinite drawings \nin collaboration with many other people. Each user can start with a preset scribble \nor can join a scribble that has already been started by other users.", windowWidth / 2, windowHeight / 10 * 2);
 
     fill("#ffb3ff");
-    text("The aim is to try and include the previous scribbles with your drawing, creating \na collaborative and potentially endless work of art. \n\nWhen you're finished, send your scribble to the Loop! Future users will be able to continue the journey from there.", windowWidth / 2, windowHeight / 10 * 4.2);
+    text("The aim is to try and include the previous scribbles with your drawing, creating \na collaborative and potentially endless work of art. \n\nWhen you're finished, send your scribble to the Loop! \nFuture users will be able to continue the journey from there.", windowWidth / 2, windowHeight / 10 * 4.2);
 
     fill("#9fdfff");
     text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12: Beatrice Foresti, Pietro Forino, Emanuele Ghebaur and Michele La Rosa.", windowWidth / 2, windowHeight / 10 * 5.8);
