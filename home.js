@@ -67,7 +67,7 @@ function draw() {
 }
 
 function openScribble() {
-    window.open("scribble.html", "_self");
+    window.open("scribble.php", "_self");
 }
 
 function openCourse() {
