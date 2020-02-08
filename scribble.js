@@ -172,5 +172,5 @@ function sendCanvas() {
 
   document.getElementById('img').style.position = "absolute";
   document.getElementById('newimg').style.position = "relative";
-  document.getElementById('img').style.transform = "translate(" + fx + "px," + fy + "px) scale(" + 1 / k + ")";
+  // document.getElementById('img').style.transform = "translate(" + fx + "px," + fy + "px) scale(" + 1 / k + ")";
 }
