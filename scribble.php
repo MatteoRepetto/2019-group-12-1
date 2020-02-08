@@ -121,7 +121,7 @@
   <div id="controller">
     <a href="index.php"><img src="assets/home.png" id="homeButton" type="button"/></a>
     <img src="assets/loop.png" id="saveLoop" type="button" onclick="sendCanvas()"/>
-    <img src="assets/draw.png" id="drawButton" type="button" onclick="eraseLine()"/>
+    <img src="assets/draw.png" id="drawButton" type="button" onclick="drawLine()"/>
     <img src="assets/erase.png" id="eraseButton" type="button" onclick="eraseLine()"/>
   </div>
 
@@ -162,7 +162,7 @@
               }
             }).done(function(o) {
               console.log('saved');
-              
+
               $('#controller').fadeOut()
               $('#modal').fadeIn()
 
