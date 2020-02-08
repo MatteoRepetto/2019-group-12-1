@@ -14,7 +14,7 @@
   <script language="javascript" type="text/javascript" src="addons/p5.dom.min.js"></script>
   <script language="javascript" type="text/javascript" src="addons/p5.sound.min.js"></script>
 
-  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <script language="javascript" type="text/javascript" src="scribble.js"></script>
 
   <style>
     body {

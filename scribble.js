@@ -16,8 +16,6 @@ var k = Math.random() * (1.9 - 1.3) + 1.3; // creo variabili randomiche per scal
 var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
 var fy = Math.random() * (1920 / 8 * ((k - 1) / k) - 1);
 
-// var phpImage = <?php echo json_encode($randomImage); ?>
-// var r  = Math.random() * (60 + 60) + 60;
 
 
 function setup() {
@@ -26,7 +24,6 @@ function setup() {
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
   img1 = loadImage(phpImage)
-  // img1 = loadImage('assets/' + phpImage + '.png')
   console.log(phpImage)
 }
 
