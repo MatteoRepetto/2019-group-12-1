@@ -16,8 +16,6 @@ var k = Math.random() * (1.9 - 1.3) + 1.3; // creo variabili randomiche per scal
 var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
 var fy = Math.random() * (1920 / 8 * ((k - 1) / k) - 1);
 
-
-
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(startPath);
