@@ -9,7 +9,7 @@ var pathErase;
 
 var phpImage;
 
-var erase = false;
+var erase = 0;
 
 var drawing = [];
 var currentPath = [];
@@ -19,12 +19,15 @@ var k = Math.random() * (1.9 - 1.3) + 1.3; // creo variabili randomiche per scal
 var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
 var fy = Math.random() * (1920 / 8 * ((k - 1) / k) - 1);
 
+function preload() {
+  img1 = loadImage(phpImage)
+}
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(startPath);
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
-  img1 = loadImage(phpImage)
   console.log(phpImage)
   push()
   translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
@@ -32,10 +35,12 @@ function setup() {
 
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
+  coloreUno = get(fx * 4 + 5, fy * 4 + 5); // prendo il colore di sfondo
+  coloreDue = get(fx * 4, fy * 4); // prendo il colore di traccia
+
+
   pop()
   background(coloreDue);
-
-
 }
 
 function startPath() {
@@ -64,13 +69,13 @@ function touchEnded() {
 }
 
 function eraseLine() {
-  erase = true
+  erase = 1
   console.log(erase)
   // drawing = []; cancella tutto
 }
 
 function drawLine() {
-  erase = false;
+  erase = 0;
   console.log(erase)
   // drawing = []; cancella tutto
 }
@@ -80,23 +85,27 @@ function drawLine() {
 console.log(Math.round(fx), Math.round(fy), Math.round(k));
 
 function draw() {
-  coloreUno = get(fx * 4 + 5, fy * 4 + 5); // prendo il colore di sfondo
-  coloreDue = get(fx * 4, fy * 4); // prendo il colore di traccia
-  background(coloreDue);
+  // background(coloreDue);
 
   push()
   translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
   scale(1 / k); // scale dello sketch
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
-// pop()
-// line((mouseX - fx) * k, (mouseY - fy) * k, (pmouseX - fx) * k, (pmouseY - fy) * k)
 
   push()
   scale(k); // scale dello sketch
   translate(-fx * 4,-fy * 4); // traslazione dello sketch complessivo
+
    if (isDrawing) {
     stroke(coloreUno);
+    strokeWeight(3)
     line(mouseX, mouseY ,pmouseX, pmouseY )
+} else if (erase == 1) {
+  console.log(erase)
+  stroke(coloreDue);
+  strokeWeight(3)
+  line(mouseX, mouseY ,pmouseX, pmouseY )
+
 }
     noStroke()
     fill(coloreDue)
