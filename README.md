@@ -37,14 +37,15 @@ Scribble Loop is a web platform that allows everyone to create infinite drawings
 The first challenge
  </li>
    <li>
-Making real life relations to the interaction. Example: to increase temperature one must rub the temperature button. To make the plane go up, user must tilt the device upwards in the same way a plane does.
- </li> <li>
-Retaining a pleasant looking layout that was responsive, even though the sketch is designed mainly for the iPad.
-</li>
-  </ol>
-
-2. Store the pre-saved sketches
-3. Pick randomly the skecthes
-4. Dynamic server instead of static server
-5. Keep track of the color's switching
-
+     <b>Store the pre-saved sketches</b></br>
+ </li>
+ <li>
+  <b>Pick randomly the skecthes</b></br>
+ </li>
+ <li>
+  <b>Dynamic server instead of static server</b></br>
+ </li>
+ <li>
+  <b>Keep track of the color's switching</b></br>
+ </li>
+</ol>
