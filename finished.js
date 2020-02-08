@@ -5,6 +5,7 @@ function preload() {
     myFont = loadFont('./assets/CircularStd-Book.otf');
     logo = loadImage("./assets/logo.png");
     clap = loadImage("./assets/clap.png");
+    ok = loadImage("./assets/ok.png");
 
 }
 
@@ -14,15 +15,15 @@ function setup() {
     background("black");
 
     again = createButton("Scribble Again");
-    again.position(windowWidth / 2 - 100, windowHeight / 10 * 4.5);
+    again.position(windowWidth / 2 - 100, windowHeight / 10 * 4);
     again.mousePressed(goAgain);
 
     gallery = createButton("Discover the Gallery");
-    gallery.position(windowWidth / 2 - 100, windowHeight / 10 * 5.5);
+    gallery.position(windowWidth / 2 - 100, windowHeight / 10 * 5);
     gallery.mousePressed(goGallery);
 
     home = createButton("Return to Home");
-    home.position(windowWidth / 2 - 100, windowHeight / 10 * 6.5);
+    home.position(windowWidth / 2 - 100, windowHeight / 10 * 6);
     home.mousePressed(goHome);
 
     selectAll("button").forEach(item => {
@@ -63,14 +64,18 @@ function draw() {
     image(logo, windowWidth / 2, windowHeight / 10);
 
     imageMode(CENTER);
-    clap.resize(70, 70);
-    image(clap, windowWidth / 2, windowHeight / 10 * 2.2);
+    clap.resize(0, 400);
+    image(clap, windowWidth / 10 * 8, windowHeight / 10 * 5.2);
+
+    imageMode(CENTER);
+    ok.resize(0, 350);
+    image(ok, windowWidth / 10 * 2, windowHeight / 10 * 5.2);
 
     fill("#9fdfff");
     textFont(myFont);
     textSize(20);
     textAlign(CENTER);
-    text("Great Job! \nYour work of art is now in the Loop. Thank you for your contribution!", windowWidth / 2, windowHeight / 10 * 3);
+    text("Great Job! \nYour work of art is now in the Loop. Thank you for your contribution!", windowWidth / 2, windowHeight / 10 * 2);
 
 }
 
