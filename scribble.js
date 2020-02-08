@@ -2,8 +2,8 @@
 var img1;
 var coloreUno = 'black';
 var coloreDue = 'black';
-var coloreTre = 'black';
-var coloreQuattro = 'black';
+// var coloreTre = 'black';
+// var coloreQuattro = 'black';
 var path;
 
 var phpImage;
@@ -110,6 +110,9 @@ function draw() {
 }
 
 function sendCanvas() {
+  document.getElementById('img').style.position = "absolute";
+  document.getElementById('newimg').style.position = "relative";
+
   // push()
   //   translate(-fx,-fy)
   //   scale(k)
@@ -170,7 +173,5 @@ function sendCanvas() {
   //   }
   // );
 
-  document.getElementById('img').style.position = "absolute";
-  document.getElementById('newimg').style.position = "relative";
   // document.getElementById('img').style.transform = "translate(" + fx + "px," + fy + "px) scale(" + 1 / k + ")";
 }
