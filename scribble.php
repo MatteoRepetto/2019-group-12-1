@@ -120,10 +120,10 @@
       <img src="" id="newimg"/></div>
   </div>
   <div id="controller">
-    <img src="assets/home.png" id="homeButton" type="button" onclick="eraseLine()"/>
+    <a href="index.php"><img src="assets/home.png" id="homeButton" type="button"/></a>
     <img src="assets/loop.png" id="saveLoop" type="button" onclick="sendCanvas()"/>
     <img src="assets/draw.png" id="drawButton" type="button" onclick="eraseLine()"/>
-    <a href="index.php"><img src="assets/erase.png" id="eraseButton" type="button"/></a>
+    <img src="assets/erase.png" id="eraseButton" type="button" onclick="eraseLine()"/>
   </div>
 
   <div id="modal">
