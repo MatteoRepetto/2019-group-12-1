@@ -103,7 +103,7 @@
 
   $images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
-  $randomImage = $images[array_rand($images)]; // See comments
+  $randomImage = $images[array_rand($images)];
 
 ?>
 
@@ -156,13 +156,13 @@
 
             $.ajax({
               type: "POST",
-              // url: "http://www.pietroforino.com/test3/script.php", // due to the GitHub restrictions, we have to use an external domain which permitt the use of PHP
-              url: "script.php", // da attivare per il local server, disattivando quello sopra
+              url: "server.php",
               data: {
                 imgBase64: dataURL
               }
             }).done(function(o) {
               console.log('saved');
+              
               $('#controller').fadeOut()
               $('#modal').fadeIn()
 
