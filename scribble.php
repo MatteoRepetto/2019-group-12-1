@@ -123,7 +123,7 @@
     <img src="assets/home.png" id="homeButton" type="button" onclick="eraseLine()"/>
     <img src="assets/loop.png" id="saveLoop" type="button" onclick="sendCanvas()"/>
     <img src="assets/draw.png" id="drawButton" type="button" onclick="eraseLine()"/>
-    <a href="#"><img src="assets/erase.png" id="eraseButton" type="button"/></a>
+    <a href="index.php"><img src="assets/erase.png" id="eraseButton" type="button"/></a>
   </div>
 
   <div id="modal">

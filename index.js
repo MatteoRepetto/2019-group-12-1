@@ -75,7 +75,7 @@ function openCourse() {
 }
 
 function openAbout() {
-    window.open("about.html", "_self");
+    window.open("about.php", "_self");
 }
 
 //All these create a hover effect on the buttons

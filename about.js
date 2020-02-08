@@ -71,7 +71,7 @@ function draw() {
 }
 
 function goHome() {
-    window.open("index.html", "_self");
+    window.open("index.php", "_self");
 }
 
 function changeColor() {
