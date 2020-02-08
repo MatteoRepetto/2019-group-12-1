@@ -37,7 +37,20 @@ function startPath() {
   drawing.push(currentPath);
 }
 
+function touchStarted() {
+  $('#controller').fadeOut('fast')
+  isDrawing = true;
+  currentPath = [];
+  drawing.push(currentPath);
+  return false;
+}
+
 function endPath() {
+  $('#controller').fadeIn('fast')
+  isDrawing = false;
+}
+
+function touchEnded() {
   $('#controller').fadeIn('fast')
   isDrawing = false;
 }

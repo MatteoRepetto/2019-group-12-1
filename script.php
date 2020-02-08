@@ -6,4 +6,5 @@
   $file = 'newSketches/' . uniqid() . '.png';
   $success = file_put_contents($file, $data);
   print $success ? $file : 'Impossibile salvare il file sul server';
+
 ?>

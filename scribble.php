@@ -7,7 +7,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script language="javascript" type="text/javascript" src="addons/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="addons/p5.dom.min.js"></script>
@@ -21,6 +22,13 @@
       overflow-y: hidden;
       margin: 0;
       padding: 0;
+      -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome, Opera and Firefox */
     }
     #saveLoop {
       position: absolute;
@@ -132,6 +140,7 @@
   </div>
 
   <script>
+
     $(function() {
       $("#saveLoop").click(function() {
 
@@ -148,8 +157,8 @@
 
             $.ajax({
               type: "POST",
-              url: "http://www.pietroforino.com/test3/script.php", // due to the GitHub restrictions, we have to use an external domain which permitt the use of PHP
-              // url: "script.php", // da attivare per il local server, disattivando quello sopra
+              // url: "http://www.pietroforino.com/test3/script.php", // due to the GitHub restrictions, we have to use an external domain which permitt the use of PHP
+              url: "script.php", // da attivare per il local server, disattivando quello sopra
               data: {
                 imgBase64: dataURL
               }
@@ -159,6 +168,42 @@
               $('#modal').fadeIn()
 
               $("#closePopup").click(function() {
+                $('#controller').fadeIn()
+                $('#modal').fadeOut()
+              })
+            });
+          }
+        });
+      });
+
+
+      // touch controls
+      $("#saveLoop").on("tap",function() {
+
+        html2canvas($("#screen"), {
+          onrendered: function(canvas) {
+            var imgsrc = canvas.toDataURL("image/png");
+
+            $("#newimg").attr('src', imgsrc);
+            $("#img").show();
+
+            $("#newimg").show();
+            $("#createImg").hide();
+            var dataURL = canvas.toDataURL();
+
+            $.ajax({
+              type: "POST",
+              // url: "http://www.pietroforino.com/test3/script.php", // due to the GitHub restrictions, we have to use an external domain which permitt the use of PHP
+              url: "script.php", // da attivare per il local server, disattivando quello sopra
+              data: {
+                imgBase64: dataURL
+              }
+            }).done(function(o) {
+              console.log('saved');
+              $('#controller').fadeOut()
+              $('#modal').fadeIn()
+
+              $("#closePopup").on("tap",function() {
                 $('#controller').fadeIn()
                 $('#modal').fadeOut()
               })
