@@ -46,20 +46,20 @@ The interactions are meant to be as intuitive and minimal as possible.
 <ol>
   <li>
     <b>Saving the sketches</b></br>
-    The first challenge we had to face was how to save the sketches. We needed to get a screenshot which could be saved remotely on a server and not locally (**save()** was not helpful).
+  The first challenge we had to face was how to save the sketches. We needed to get a screenshot which could be saved remotely on a server and not locally ( **save()** was not helpful).
 
-    The first approach was to save the code itself using a server-as-service: Firebase. This choice became inconvenient when we had a second level scribble loop (a “scribble around a scribble, around a scribble”): the transformations management wasn’t intuitive or trackable enough, since the overlapping of multiple transformations needed the same number of counter-transformations to compensate.
+  The first approach was to save the code itself using a server-as-service: Firebase. This choice became inconvenient when we had a second level scribble loop (a “scribble around a scribble, around a scribble”): the transformations management wasn’t intuitive or trackable enough, since the overlapping of multiple transformations needed the same number of counter-transformations to compensate.
 
-    At this point we decided to save the sketch by creating an image file. At first, we tried to utilize the **saveFrames()** function, which on paper seemed a great option because it could use a callback to remotely save the sketch. This strategy quickly revealed itself to be ineffective, since it was a function optimised for saving animations, and a single frame file created an unpredictable and variable file.
+  At this point we decided to save the sketch by creating an image file. At first, we tried to utilize the **saveFrames()** function, which on paper seemed a great option because it could use a callback to remotely save the sketch. This strategy quickly revealed itself to be ineffective, since it was a function optimised for saving animations, and a single frame file created an unpredictable and variable file.
 
-    The best solution we came up with was a combination of the **html2canvas.js** library and the **imgBase64** encoding, which allowed to create a good quality and very light file:
+  The best solution we came up with was a combination of the **html2canvas.js** library and the **imgBase64** encoding, which allowed to create a good quality and very light file:
 
  </li>
    <li>
      <b>Storing the pre-saved sketches</b></br>
-     When the png files were created, we needed to remotely save them. Our first option was **Firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
+  When the png files were created, we needed to remotely save them. Our first option was **Firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
 
-     The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
+  The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
 
  </li>
  <li>
