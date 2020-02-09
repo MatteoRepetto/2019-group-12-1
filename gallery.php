@@ -16,9 +16,10 @@
 </head>
 
 <body>
+  <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')"/>
 
   <div style="text-align: center; color: #9fdfff">
-    <h1>scribble gallery</h1>
+    <h1>scribble</br>gallery</h1>
   </div>
   <?php
 

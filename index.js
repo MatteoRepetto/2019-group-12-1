@@ -67,7 +67,7 @@ function draw() {
 }
 
 function openScribble() {
-  if (windowWidth <= 420) {
+  if (windowWidth <= 415) {
     window.open("scribble.php", "_self");
   } else {
     window.open("scribble_desktop.php", "_self");
