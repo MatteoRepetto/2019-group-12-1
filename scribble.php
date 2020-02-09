@@ -18,7 +18,7 @@
   body {
     overflow-x: hidden;
     overflow-y: hidden;
-  } 
+  }
   </style>
 </head>
 
@@ -46,17 +46,17 @@
   <div id="controller">
     <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')"/>
     <img src="assets/loop.png" id="saveLoop"/>
-    <img src="assets/draw.png" id="drawButton"onclick="drawLine()"/>
+    <!-- <img src="assets/draw.png" id="drawButton"onclick="drawLine()"/> -->
     <img src="assets/erase.png" id="eraseButton" onclick="eraseLine()"/>
   </div>
 
   <div id="modal">
     <div id="popup">
-        Great Job!</br>Your work of art is now in the Loop. Thank you for your contribution!
-      <!-- <span id="closePopup">x</span> -->
+        <p id="testo">Great Job!</br>Your artwork is ready to be send into the Loop.</p>
+      <span id="closePopup">x</span>
 
-      <a href="gallery.php">
-        <div id="buttonGallery">go to the gallery</div>
+      <a href="#" id="galleryLink">
+        <div id="buttonGallery">save in the Loop</div>
       </a>
     </div>
 
@@ -65,9 +65,20 @@
   <script>
 
     $(function() {
-      $("#saveLoop").click(function() {
+        $("#saveLoop").click(function() {
+          $('#controller').fadeOut()
+          $('#modal').fadeIn()
+        });
 
-        html2canvas($("#screen"), {
+        $("#closePopup").click(function() {
+          $('#controller').fadeIn()
+          $('#modal').fadeOut()
+        })
+
+var contaGallery = 0
+
+      $("#buttonGallery").click(function() {
+         html2canvas($("#screen"), {
           onrendered: function(canvas) {
             var imgsrc = canvas.toDataURL("image/png");
 
@@ -78,6 +89,7 @@
             $("#createImg").hide();
             var dataURL = canvas.toDataURL();
 
+          if (contaGallery == 0) {
             $.ajax({
               type: "POST",
               url: "server.php",
@@ -86,16 +98,14 @@
               }
             }).done(function(o) {
               console.log('saved');
-
-              $('#controller').fadeOut()
-              $('#modal').fadeIn()
-
-              $("#closePopup").click(function() {
-                $('#controller').fadeIn()
-                $('#modal').fadeOut()
-              })
+              contaGallery = 1
+             console.log(contaGallery);
+             $("#buttonGallery").text('go to the gallery');
+             $("#testo").text('Sended! Thank for your contribution');
+             $("#galleryLink").attr('href','gallery.php');
             });
           }
+        }
         });
       });
 

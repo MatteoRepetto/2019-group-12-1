@@ -35,7 +35,6 @@ function startPath() {
   currentErase = [];
   drawing.push(currentPath);
   drawingErase.push(currentErase);
-
 }
 
 function touchStarted() {
@@ -59,16 +58,16 @@ function touchEnded() {
 }
 
 function eraseLine() {
-  erase = 1
-  isErasing = true
-  console.log(erase)
-  // drawing = []; cancella tutto
+  // erase = 1
+  // isErasing = true
+  // console.log(erase)
+  drawing = [];
 }
 
-function drawLine() {
-  erase = 0;
-  console.log(erase)
-}
+// function drawLine() {
+//   erase = 0;
+//   console.log(erase)
+// }
 
 console.log(Math.round(fx), Math.round(fy), Math.round(k));
 function draw() {
@@ -119,35 +118,35 @@ function draw() {
   }
   pop()
 
-  if (erase == 1) {
-    push()
-    translate(fx, fy); // traslazione dello sketch complessivo
-    scale(1 / k); // scale dello sketch
-
-    if (isDrawing) {
-      console.log('i')
-      var pointErase = {
-        x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
-        y: (mouseY - fy) * k
-      };
-      currentErase.push(pointErase);
-    }
-    stroke(coloreDue);
-    strokeWeight(30);
-    noFill();
-
-    for (var i = 0; i < drawingErase.length; i++) {
-      pathErase = drawingErase[i];
-
-      beginShape();
-      for (var j = 0; j < pathErase.length; j++) {
-        vertex(pathErase[j].x, pathErase[j].y);
-      }
-      endShape();
-    }
-    pop()
-
-  }
+  // if (erase == 1) {
+  //   push()
+  //   translate(fx, fy); // traslazione dello sketch complessivo
+  //   scale(1 / k); // scale dello sketch
+  //
+  //   if (isDrawing) {
+  //     console.log('i')
+  //     var pointErase = {
+  //       x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
+  //       y: (mouseY - fy) * k
+  //     };
+  //     currentErase.push(pointErase);
+  //   }
+  //   stroke(coloreDue);
+  //   strokeWeight(30);
+  //   noFill();
+  //
+  //   for (var i = 0; i < drawingErase.length; i++) {
+  //     pathErase = drawingErase[i];
+  //
+  //     beginShape();
+  //     for (var j = 0; j < pathErase.length; j++) {
+  //       vertex(pathErase[j].x, pathErase[j].y);
+  //     }
+  //     endShape();
+  //   }
+  //   pop()
+  //
+  // }
 
   translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
   scale(1 / k); // scale dello sketch
