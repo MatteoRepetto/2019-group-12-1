@@ -2,7 +2,7 @@ var myFont;
 
 function preload() {
 
-    myFont = loadFont('./assets/CircularStd-Book.otf');
+    myFont = loadFont('./assets/CircularStd-Black.otf');
     logo = loadImage("./assets/logo.png");
 
 }
