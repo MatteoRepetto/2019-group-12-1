@@ -67,7 +67,11 @@ function draw() {
 }
 
 function openScribble() {
+  if (windowWidth <= 400) {
     window.open("scribble.php", "_self");
+  } else {
+    window.open("scribble_desktop.php", "_self");
+  }
 }
 
 function openCourse() {

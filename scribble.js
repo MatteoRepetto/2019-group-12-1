@@ -14,6 +14,7 @@ var currentPath = [];
 var currentErase = [];
 var erase = 0;
 var isDrawing = false;
+var isErasing = false;
 
 var k = Math.random() * (1.9 - 1.3) + 1.3; // creo variabili randomiche per scalare e spostare lo sketch da completare - scale tra 1/3 e 1/2 [da definire meglio]
 var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
@@ -60,6 +61,7 @@ function touchEnded() {
 
 function eraseLine() {
   erase = 1
+  isErasing = true
   console.log(erase)
   // drawing = []; cancella tutto
 }
@@ -67,7 +69,6 @@ function eraseLine() {
 function drawLine() {
   erase = 0;
   console.log(erase)
-  // drawing = []; cancella tutto
 }
 
 console.log(Math.round(fx), Math.round(fy), Math.round(k));
@@ -93,7 +94,6 @@ function draw() {
     rect(1,0,1,1)
   pop()
 
-  fill(coloreUno);
   pop()
   push()
   translate(fx, fy); // traslazione dello sketch complessivo
@@ -106,6 +106,7 @@ function draw() {
     };
     currentPath.push(point);
   }
+
   stroke(coloreUno);
   strokeWeight(5);
   noFill();
@@ -121,11 +122,13 @@ function draw() {
   pop()
 
   if (erase == 1) {
+    isDrawing = false
     push()
     translate(fx, fy); // traslazione dello sketch complessivo
     scale(1 / k); // scale dello sketch
 
-    if (isDrawing) {
+    if (isErasing) {
+      console.log('i')
       var pointErase = {
         x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
         y: (mouseY - fy) * k
@@ -138,6 +141,7 @@ function draw() {
 
     for (var i = 0; i < drawingErase.length; i++) {
       pathErase = drawingErase[i];
+
       beginShape();
       for (var j = 0; j < pathErase.length; j++) {
         vertex(pathErase[j].x, pathErase[j].y);
@@ -145,7 +149,11 @@ function draw() {
       endShape();
     }
     pop()
+
+  } else {
   }
+
+
   translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
   scale(1 / k); // scale dello sketch
 

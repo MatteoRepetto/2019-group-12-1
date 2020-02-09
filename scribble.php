@@ -13,7 +13,7 @@
   <script language="javascript" type="text/javascript" src="addons/p5.dom.min.js"></script>
   <script language="javascript" type="text/javascript" src="addons/p5.sound.min.js"></script>
 
-  <script language="javascript" type="text/javascript" src="scribble_new.js"></script>
+  <script language="javascript" type="text/javascript" src="scribble.js"></script>
 
   <style>
     body {
@@ -21,7 +21,6 @@
       overflow-y: hidden;
       margin: 0;
       padding: 0;
-      -webkit-touch-callout: none; /* iOS Safari */
    -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
       -moz-user-select: none; /* Old versions of Firefox */
@@ -93,6 +92,32 @@
       color:white;
       text-align: center;
       padding-top: 9vh;
+    }
+
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: block;
+    }
+
+    .content {
+      position: absolute;
+      width: 360px;
+      height: 640px;
+      background: white;
+      left:50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media only screen and (max-width: 400px) {
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
     }
   </style>
 </head>
