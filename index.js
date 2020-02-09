@@ -58,11 +58,11 @@ function draw() {
     imageMode(CENTER);
     image(logo, windowWidth / 2, windowHeight / 3.2);
 
-    fill("#9fdfff");
-    textFont(myFont);
-    textSize(20);
-    textAlign(CENTER);
-    text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
+    // fill("#9fdfff");
+    // textFont(myFont);
+    // textSize(20);
+    // textAlign(CENTER);
+    // text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
 
 }
 
