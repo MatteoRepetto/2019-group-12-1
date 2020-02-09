@@ -4,7 +4,7 @@
 * [Beatrice Foresti](mailto:bea_fiore@live.it)
 * [Pietro Forino](mailto:pietrof@live.com)
 * [Emanuele ghebaur](mailto:emanueleghebaur@gmail.com)
-* [Michele La Rosa](mailto:)
+* [Michele La Rosa](mailto:miki.larosa@hotmail.it)
 
 ### Course:
 [Creative Coding 2019/2020](https://drawwithcode.github.io/2019/)<br>
@@ -19,7 +19,7 @@
 **Scribble Loop** is the answer!
 Our inspiration comes from the artist [Pablo Rochat](http://pablorochat.com). He overcomes the limit of the artist canvas by creating an Instagram Stories “game”: he tags an artist in his story and invites him to go on with his first drawing and repost it.
 We start our project inspired by Pablo’s idea and we make it bigger.
-Scribble Loop is a web platform that allows everyone to create infinite drawings and collaborate with others. Each user can start with a preset drawing or can join a drawing that has already been scribbled by other users. The drawing will be saved and reloaded to allow other users to go on with it.
+Scribble Loop is a web platform that allows anyone to create infinite drawings and to cooperate with others. Each user can start with a preset drawing or he can join a drawing that has already been scribbled by other users. The drawing will be saved and reloaded to allow other users to go on with it.
 
 ## Design challenges
 [...]
