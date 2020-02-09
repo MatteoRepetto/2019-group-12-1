@@ -18,7 +18,7 @@
 <body>
 
   <div style="text-align: center; color: #9fdfff">
-    <h1>scribble gallery</h1>
+    <h1>Scribble Gallery</h1>
   </div>
   <?php
 
