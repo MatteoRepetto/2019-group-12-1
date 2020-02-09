@@ -1,4 +1,4 @@
-![Header](asstes/header.png)
+![Header](assets/header.png)
 
 ### Team members:
 
@@ -54,12 +54,41 @@ The interactions are meant to be as intuitive and minimal as possible.
 
   The best solution we came up with was a combination of the **html2canvas.js** library and the **imgBase64** encoding, which allowed to create a good quality and very light file:
 
+      ‘’’
+      $(function() {
+      $("#saveLoop").click(function() {
+        html2canvas($("#screen"), {
+          onrendered: function(canvas) {
+            var imgsrc = canvas.toDataURL("image/png");
+
+            $("#newimg").attr('src', imgsrc);
+            $("#img").show();
+            $("#newimg").show();
+            $("#createImg").hide();
+
+            var dataURL = canvas.toDataURL();
+
+            $.ajax({
+              type: "POST",
+              url: "script.php",
+              data: {
+                imgBase64: dataURL
+              }
+            }).done(function(o) {
+              console.log('saved');
+            });
+           }
+         });
+       });
+    ‘’’
+
  </li>
    <li>
      <b>Storing the pre-saved sketches</b></br>
   When the png files were created, we needed to remotely save them. Our first option was **Firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
 
   The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
+
 
  </li>
  <li>
