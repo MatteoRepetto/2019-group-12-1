@@ -12,87 +12,13 @@
   <script language="javascript" type="text/javascript" src="addons/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="addons/p5.dom.min.js"></script>
   <script language="javascript" type="text/javascript" src="addons/p5.sound.min.js"></script>
-
+  <link rel="stylesheet" href="/style.css">
   <script language="javascript" type="text/javascript" src="scribble.js"></script>
-
-  <style>
-    body {
-      overflow-x: hidden;
-      overflow-y: hidden;
-      margin: 0;
-      padding: 0;
-   -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-       -ms-user-select: none; /* Internet Explorer/Edge */
-           user-select: none; /* Non-prefixed version, currently
-                                 supported by Chrome, Opera and Firefox */
-    }
-    #saveLoop {
-      position: absolute;
-      max-width: 40px;
-      bottom: 20px;
-      right: 30px;
-      /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-      filter: drop-shadow(5px 5px 5px #000); */
-    }
-
-    #drawButton{
-      position: absolute;
-      max-width: 40px;
-      bottom: 20px;
-      left: 30px;
-      /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-      filter: drop-shadow(5px 5px 5px #000); */
-    }
-
-    #eraseButton{
-      position: absolute;
-      max-width: 40px;
-      bottom: 20px;
-      left: 50vw;
-      transform: translate(-20px,0px);
-      /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-      filter: drop-shadow(5px 5px 5px #000); */
-    }
-
-    #homeButton{
-      position: absolute;
-      max-width: 40px;
-      top: 20px;
-      left: 30px;
-      /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-      filter: drop-shadow(5px 5px 5px #000); */
-    }
-
-    #modal {
-      display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.8); /* Black w/ opacity */    }
-
-    #popup {
-      position: absolute;
-      width: 80vw;
-      height: 40vh;
-      background-color: black;
-      border: 2px solid red;
-      border-radius: 10px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-40vw, -40vw);
-      z-index: 1000;
-      margin: 0 auto;
-      color:white;
-      text-align: center;
-      padding-top: 9vh;
-    }
+  <style media="screen">
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  } 
   </style>
 </head>
 
@@ -126,12 +52,11 @@
 
   <div id="modal">
     <div id="popup">
-        Thank you!<br>Your scribble has been sent to the Loop, let's take a look
-      <span id="closePopup" style="position: absolute; top: 1vh; right: 3vw; color:red; cursor: pointer">x</span>
+        Great Job!</br>Your work of art is now in the Loop. Thank you for your contribution!
+      <!-- <span id="closePopup">x</span> -->
 
       <a href="gallery.php">
-        <div style="text-align:center; background:red; color:black; width:60vw; height: 5vh; margin-left: 10vw; margin-top: 20vh;padding-top: 2vh">go to the gallery</div>
-
+        <div id="buttonGallery">go to the gallery</div>
       </a>
     </div>
 

@@ -1,9 +1,8 @@
 
 var img1;
-var coloreUno = 'black';
-var coloreDue = 'black';
-// var coloreTre = 'black';
-// var coloreQuattro = 'black';
+var coloreUno = '';
+var coloreDue = '';
+
 var path;
 
 var phpImage, pathErase;
