@@ -1,47 +1,121 @@
-![Header](asstes/header.png)
+![Header](assets/header.png)
 
 ### Team members:
-* [Beatrice Foresti](mailto:bea_fiore@live.it)
-* [Pietro Forino](mailto:pietrof@live.com)
-* [Emanuele ghebaur](mailto:emanueleghebaur@gmail.com)
-* [Michele La Rosa](mailto:)
+
+-   [Beatrice Foresti](mailto:bea_fiore@live.it)
+-   [Pietro Forino](mailto:pietrof@live.com)
+-   [Emanuele ghebaur](mailto:emanueleghebaur@gmail.com)
+-   [Michele La Rosa](mailto:miki.larosa@hotmail.it)
 
 ### Course:
+
 [Creative Coding 2019/2020](https://drawwithcode.github.io/2019/)<br>
 **Politecnico di Milano** - Scuola del Design<br>
 **Faculty:** Michele Mauri, Andrea Benedetti
 
 ## Images
+
 [...]
 
 ## Project idea
+
 **What if you could draw an infinite sketch? And what if you could share it with people and collaborate with them to continue their drawings?**
 **Scribble Loop** is the answer!
-Our inspiration comes from the artist [Pablo Rochat](http://pablorochat.com). He overcomes the limit of the artist canvas by creating an Instagram Stories “game”: he tags an artist in his story and invites him to go on with his first drawing and repost it.
-We start our project inspired by Pablo’s idea and we make it bigger.
-Scribble Loop is a web platform that allows everyone to create infinite drawings and collaborate with others. Each user can start with a preset drawing or can join a drawing that has already been scribbled by other users. The drawing will be saved and reloaded to allow other users to go on with it.
+Our inspiration comes from the artist [Pablo Rochat](http://pablorochat.com). He overcomes the limit of the artist canvas by creating an Instagram Stories “game”: he tags an artist in his story and invites him to go on with his first drawing and re-post it.
+
+We started our project inspired by Pablo’s idea and we made it bigger.
+Scribble Loop is a web platform that allows everyone to create infinite drawings and collaborate with others. Each user can start with a preset drawing or can join a drawing that has already been scribbled by other users.The drawing will be saved and reloaded to allow other users to go on with it. Only two colors are available in every sketch, and you can’t decide the location of the previous resized sketch. These limitations are meant to enchance your creativity!
 
 ## Design challenges
-[...]
 
-## Code challenges
-
+The interactions are meant to be as intuitive and minimal as possible.
 
 <ol>
   <li>
-    <b>Save the sketches</b></br>
-The first challenge
+    <b> Mouse interaction </b></br>
+    In the desktop interface the main interaction is with the mouse which becomes the brush. As you enter the scribble sketch, you can simply draw lines by moving the mouse.
+  </li>
+  <li>
+    <b> Touch interaction </b></br>
+    Touch interaction: On the mobile devices the users can draw by touching the screen.  
+  </li>
+  </ol>
+
+## Code challenges
+
+<ol>
+  <li>
+    <b>Saving the sketches</b></br>
+  The first challenge we had to face was how to save the sketches. We needed to get a screenshot which could be saved remotely on a server and not locally ( save() was not helpful).
+
+  The first approach was to save the code itself using a server-as-service: Firebase. This choice became inconvenient when we had a second level scribble loop (a “scribble around a scribble, around a scribble”): the transformations management wasn’t intuitive or trackable enough, since the overlapping of multiple transformations needed the same number of counter-transformations to compensate.
+
+  At this point we decided to save the sketch by creating an image file. At first, we tried to utilize the **saveFrames()** function, which on paper seemed a great option because it could use a callback to remotely save the sketch. This strategy quickly revealed itself to be ineffective, since it was a function optimised for saving animations, and a single frame file created an unpredictable and variable file.
+
+  The best solution we came up with was a combination of the **html2canvas.js** library and the **imgBase64** encoding, which allowed to create a good quality and very light file:
+
+      ‘’’
+      $(function() {
+      $("#saveLoop").click(function() {
+        html2canvas($("#screen"), {
+          onrendered: function(canvas) {
+            var imgsrc = canvas.toDataURL("image/png");
+
+            $("#newimg").attr('src', imgsrc);
+            $("#img").show();
+            $("#newimg").show();
+            $("#createImg").hide();
+
+            var dataURL = canvas.toDataURL();
+
+            $.ajax({
+              type: "POST",
+              url: "script.php",
+              data: {
+                imgBase64: dataURL
+              }
+            }).done(function(o) {
+              console.log('saved');
+            });
+           }
+         });
+       });
+    ‘’’
+
  </li>
    <li>
-     <b>Store the pre-saved sketches</b></br>
+     <b>Storing the pre-saved sketches</b></br>
+  When the png files were created, we needed to remotely save them. Our first option was **Firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
+
+  The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
+
+
  </li>
  <li>
-  <b>Pick randomly the skecthes</b></br>
+  <b>Picking randomly the skecthes</b></br>
+  The imgBase64 image encoding had a problem: the random name creation, with no logic whatsoever. This made it impossible to call back the images with a function in order to make them appear in the sketch or in the gallery.
+
+  Php came to our rescue once again: javascript doesn’t allow us to access entire folders, but php does. This way, with a few lines of code, we could assign a variable that would be used in the p5js file and show every image in the “newSketches” folder in a css-managed disposition.
+
  </li>
  <li>
   <b>Dynamic server instead of static server</b></br>
+  One of the biggest obstacles to us was the creation of a dynamic php server manageable by Heroku. We needed a dynamic server able to continuously create new files and compatible with php language. Github, in this sense, had some technical limitations being a static server.
+
+  At first we wanted to upload on a dynamic server just the needed parts, keeping most of the files and the source code on Github. At the end, though, we decided to convert the entire project in php language, to enhance not only the cohesion, but mainly the manageability. This conversion was as simple as necessary, since php perfectly recognizes html language but not the other way around.
+
+  Therefore, with **Composer**, **PHP**, **Heroku** and its optimal communication with repository management directly from Github, we created a totally independent and working php app.
+
  </li>
  <li>
   <b>Keep track of the color's switching</b></br>
  </li>
 </ol>
+
+## Inspirations / References
+
+[Pablo Rochat](http://pablorochat.com)
+
+## Credits ( third libraries used )
+
+P5.js, jQuery, PHP, html2canvas.js, Composer

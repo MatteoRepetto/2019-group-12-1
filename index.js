@@ -2,7 +2,7 @@ var myFont;
 
 function preload() {
 
-    myFont = loadFont('./assets/CircularStd-Book.otf');
+    myFont = loadFont('./assets/CircularStd-Black.otf');
     logo = loadImage("./assets/logo.png");
 
 }
@@ -30,7 +30,7 @@ function setup() {
         item.style("color", "#ffb3ff");
         item.style("border-color", "#9fdfff");
         item.style("font-size", "15px");
-        item.style("font-family", "CircularStd-Book");
+        item.style("font-family", "CircularStd-Black");
         item.mouseOver(changeColor);
         item.mouseOut(beginningColor);
     });
@@ -58,11 +58,11 @@ function draw() {
     imageMode(CENTER);
     image(logo, windowWidth / 2, windowHeight / 3.2);
 
-    fill("#9fdfff");
-    textFont(myFont);
-    textSize(20);
-    textAlign(CENTER);
-    text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
+    // fill("#9fdfff");
+    // textFont(myFont);
+    // textSize(15);
+    // textAlign(CENTER);
+    // text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
 
 }
 
