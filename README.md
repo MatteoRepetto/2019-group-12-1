@@ -46,7 +46,7 @@ The interactions are meant to be as intuitive and minimal as possible.
 <ol>
   <li>
     <b>Saving the sketches</b></br>
-  The first challenge we had to face was how to save the sketches. We needed to get a screenshot which could be saved remotely on a server and not locally ( **save()** was not helpful).
+  The first challenge we had to face was how to save the sketches. We needed to get a screenshot which could be saved remotely on a server and not locally ( save() was not helpful).
 
   The first approach was to save the code itself using a server-as-service: Firebase. This choice became inconvenient when we had a second level scribble loop (a “scribble around a scribble, around a scribble”): the transformations management wasn’t intuitive or trackable enough, since the overlapping of multiple transformations needed the same number of counter-transformations to compensate.
 
@@ -116,6 +116,6 @@ The interactions are meant to be as intuitive and minimal as possible.
 
 [Pablo Rochat](http://pablorochat.com)
 
-## Credits ( third library used )
+## Credits ( third libraries used )
 
 P5.js, jQuery, PHP, html2canvas.js, Composer
