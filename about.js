@@ -59,7 +59,7 @@ function draw() {
     fill("#9fdfff");
     textFont(myFont);
     textSize(20);
-    textAlign(CENTER);
+    textAlign(LEFT);
     text("While you are waiting for the subway, while you are ''studying'' for the exam, \nwhile you are waiting for your girlfriend or while you are doing that big one, \nScribble Loop will be there to take your hand and bring you to a total waste of time. \n\nScribble Loop is a web platform that allows everyone to create infinite drawings \nin collaboration with many other people. Each user can start with a preset scribble \nor can join a scribble that has already been started by other users.", windowWidth / 2, windowHeight / 10 * 2);
 
     fill("#ffb3ff");
