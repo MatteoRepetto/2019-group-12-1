@@ -23,11 +23,11 @@
 </head>
 
 <body>
-<?php
+
+<!-- start php -->
+<?php // codice per salvare la variabile phpImage poi utilizzata in scribble.js
   $imagesDir = 'newSketches/';
-
   $images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-
   $randomImage = $images[array_rand($images)];
 
 ?>
@@ -37,6 +37,8 @@
   phpImage = <?php echo json_encode($randomImage); ?>;
 
 </script>
+<!-- end php -->
+
 
   <div id="screen">
     <div id="createImg"></div>
@@ -59,26 +61,27 @@
         <div id="buttonGallery">save in the Loop</div>
       </a>
     </div>
-
   </div>
 
+  <!-- utilizzo di jquery per ottimizzazione con linguaggio PHP + AJAX -->
   <script>
-
     $(function() {
+      // mostro il popup al premere del bottone
         $("#saveLoop").click(function() {
           $('#controller').fadeOut()
           $('#modal').fadeIn()
         });
 
+        // nascondo il popup al premere della X
         $("#closePopup").click(function() {
           $('#controller').fadeIn()
           $('#modal').fadeOut()
         })
 
-var contaGallery = 0
+      var contaGallery = 0 // variabile per salvare solo una volta lo sketch
 
       $("#buttonGallery").click(function() {
-         html2canvas($("#screen"), {
+         html2canvas($("#screen"), { //utilizzo libreria html2canvas
           onrendered: function(canvas) {
             var imgsrc = canvas.toDataURL("image/png");
 
@@ -89,7 +92,7 @@ var contaGallery = 0
             $("#createImg").hide();
             var dataURL = canvas.toDataURL();
 
-          if (contaGallery == 0) {
+          if (contaGallery == 0) { //salvataggio effettivo del file, da eseguire una sola volta
             $.ajax({
               type: "POST",
               url: "server.php",
@@ -98,52 +101,17 @@ var contaGallery = 0
               }
             }).done(function(o) {
               console.log('saved');
-              contaGallery = 1
-             console.log(contaGallery);
-             $("#buttonGallery").text('go to the gallery');
-             $("#testo").text('Sended! Thank for your contribution');
-             $("#galleryLink").attr('href','gallery.php');
+              contaGallery = 1 // impedisco un nuovo salvataggio
+
+             $("#buttonGallery").text('go to the gallery'); //cambio contenuto pulsante
+             $("#testo").text('Sended! Thank for your contribution'); //cambio testo popup
+             $("#galleryLink").attr('href','gallery.php'); //attribuisco un link al pulsante (aggiorno link da #)
             });
           }
         }
         });
       });
 
-
-      // touch controls
-      $("#saveLoop").on("tap",function() {
-
-        html2canvas($("#screen"), {
-          onrendered: function(canvas) {
-            var imgsrc = canvas.toDataURL("image/png");
-
-            $("#newimg").attr('src', imgsrc);
-            $("#img").show();
-
-            $("#newimg").show();
-            $("#createImg").hide();
-            var dataURL = canvas.toDataURL();
-
-            $.ajax({
-              type: "POST",
-              // url: "http://www.pietroforino.com/test3/script.php", // due to the GitHub restrictions, we have to use an external domain which permitt the use of PHP
-              url: "script.php", // da attivare per il local server, disattivando quello sopra
-              data: {
-                imgBase64: dataURL
-              }
-            }).done(function(o) {
-              console.log('saved');
-              $('#controller').fadeOut()
-              $('#modal').fadeIn()
-
-              $("#closePopup").on("tap",function() {
-                $('#controller').fadeIn()
-                $('#modal').fadeOut()
-              })
-            });
-          }
-        });
-      });
     });
 
   </script>
