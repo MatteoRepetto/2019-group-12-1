@@ -93,32 +93,6 @@
       text-align: center;
       padding-top: 9vh;
     }
-
-    .mobile {
-      display: none;
-    }
-    .desktop {
-      display: block;
-    }
-
-    .content {
-      position: absolute;
-      width: 360px;
-      height: 640px;
-      background: white;
-      left:50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    @media only screen and (max-width: 400px) {
-      .desktop {
-        display: none;
-      }
-      .mobile {
-        display: block;
-      }
-    }
   </style>
 </head>
 

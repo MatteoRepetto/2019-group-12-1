@@ -4,6 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
+body {
+  background-color: black;
+}
 
 /* The screen (or content) of the device */
 .content {
