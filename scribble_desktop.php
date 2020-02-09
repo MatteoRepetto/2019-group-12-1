@@ -22,6 +22,13 @@ body {
 </head>
 <body>
 
+  <h1 style="color:white; text-align: center">logo</h1>
+  <h1 style="position: absolute; color:white; left: 10%; top: 48%;">scribble + breve testo</h1>
+  <h1 style="position: absolute; color:white; right: 10%; top: 48%;">scribble + breve testo</h1>
+  <h1 style="position: absolute; bottom: 2%;color:white; left: 43%;">deve essere figo</h1>
+
+
+
   <div class="content">
     <iframe src="scribble.php" style="width:100%;border:none;height:100%" />
   </div>

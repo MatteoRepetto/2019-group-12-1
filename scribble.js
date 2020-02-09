@@ -72,7 +72,6 @@ function drawLine() {
 }
 
 console.log(Math.round(fx), Math.round(fy), Math.round(k));
-
 function draw() {
 
   push()
@@ -81,17 +80,17 @@ function draw() {
   background(coloreDue);
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-  coloreUno = get(fx * 4 + 5, fy * 4 + 5); // prendo il colore di sfondo
+  coloreUno = get(fx * 4+1, fy * 4+1); // prendo il colore di sfondo
   coloreDue = get(fx * 4, fy * 4); // prendo il colore di traccia
 
   push()
   scale(k); // scale dello sketch
   translate(-fx * 4,-fy * 4); // traslazione dello sketch complessivo
     noStroke()
-    fill(coloreDue)
-    rect(0,0,1,1)
     fill(coloreUno)
-    rect(1,0,1,1)
+    rect(0,0,2,2)
+    fill(coloreDue)
+    rect(3,0,2,2)
   pop()
 
   pop()
@@ -122,12 +121,11 @@ function draw() {
   pop()
 
   if (erase == 1) {
-    isDrawing = false
     push()
     translate(fx, fy); // traslazione dello sketch complessivo
     scale(1 / k); // scale dello sketch
 
-    if (isErasing) {
+    if (isDrawing) {
       console.log('i')
       var pointErase = {
         x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
@@ -150,80 +148,11 @@ function draw() {
     }
     pop()
 
-  } else {
   }
-
 
   translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
   scale(1 / k); // scale dello sketch
 
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-}
-
-function sendCanvas() {
-  document.getElementById('img').style.position = "absolute";
-  document.getElementById('newimg').style.position = "relative";
-
-  // push()
-  //   translate(-fx,-fy)
-  //   scale(k)
-  //   coloreQuattro = get(1, 0); // prendo il colore di sfondo
-  //   coloreTre = get(fx, fy); // prendo il colore di traccia
-  //   print('3', coloreTre)
-  //   print('4', coloreQuattro)
-  //
-  // pop()
-  // new p5(
-  //   function(p) {
-  //     p.setup = function() {
-  //       drawing = [];
-  //       p.createCanvas(windowWidth, windowHeight);
-  //
-  //
-  //     }
-  //
-  //     p.mousePressed = function() {
-  //       $('#controller').fadeOut('fast')
-  //       startPath()
-  //
-  //     }
-  //     p.mouseReleased = function() {
-  //       $('#controller').fadeIn('fast')
-  //       endPath()
-  //     }
-  //
-  //     p.draw = function() {
-  //
-  //
-  //       p.background(coloreQuattro);
-  //
-  //       p.translate(fx, fy); // traslazione dello sketch complessivo
-  //       p.scale(1 / k); // scale dello sketch
-  //
-  //       if (isDrawing) {
-  //         var point = {
-  //           x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
-  //           y: (mouseY - fy) * k
-  //         };
-  //         currentPath.push(point);
-  //       }
-  //
-  //         p.stroke(coloreTre);
-  //         p.strokeWeight(5);
-  //         p.noFill();
-  //         var path
-  //         for (var i = 0; i < drawing.length; i++) {
-  //           path = drawing[i];
-  //           p.beginShape();
-  //           for (var j = 0; j < path.length; j++) {
-  //             p.vertex(path[j].x, path[j].y);
-  //           }
-  //           p.endShape();
-  //       }
-  //     }
-  //   }
-  // );
-
-  // document.getElementById('img').style.transform = "translate(" + fx + "px," + fy + "px) scale(" + 1 / k + ")";
 }
