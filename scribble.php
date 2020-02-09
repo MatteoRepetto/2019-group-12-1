@@ -118,10 +118,10 @@
       <img src="" id="newimg"/></div>
   </div>
   <div id="controller">
-    <a href="index.php"><img src="assets/home.png" id="homeButton" type="button"/></a>
-    <img src="assets/loop.png" id="saveLoop" type="button"/>
-    <img src="assets/draw.png" id="drawButton" type="button" onclick="drawLine()"/>
-    <img src="assets/erase.png" id="eraseButton" type="button" onclick="eraseLine()"/>
+    <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')"/>
+    <img src="assets/loop.png" id="saveLoop"/>
+    <img src="assets/draw.png" id="drawButton"onclick="drawLine()"/>
+    <img src="assets/erase.png" id="eraseButton" onclick="eraseLine()"/>
   </div>
 
   <div id="modal">
