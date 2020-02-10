@@ -60,8 +60,6 @@ function eraseLine() {
   drawing = [];
 }
 
-
-
 console.log(Math.round(fx), Math.round(fy), Math.round(k));
 
 function draw() {
@@ -74,6 +72,7 @@ function draw() {
 
   coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
   coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
+  print("coloreUno: "+coloreUno,"coloreDue: "+coloreDue);
 
   push()
   scale(k); // scale of the sketch
