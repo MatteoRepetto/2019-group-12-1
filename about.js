@@ -59,7 +59,7 @@ function draw() {
   image(logo, windowWidth / 2, windowHeight / 10 * 0.7);
 
   //authors
-  authors.resize(0, 200);
+  authors.resize(0, 180);
   image(authors, windowWidth / 2, windowHeight / 10 * 8);
 
   //text
@@ -75,7 +75,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(35);
+  textSize(30);
   textAlign(LEFT);
   text("Where?", windowWidth / 3.5, windowHeight / 10 * 2);
 
@@ -87,7 +87,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(35);
+  textSize(30);
   textAlign(LEFT);
   text("How?", windowWidth / 3.5, windowHeight / 10 * 3.2);
 
@@ -99,12 +99,15 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(35);
+  textSize(30);
   textAlign(LEFT);
-  text("Who?", windowWidth / 3.5, windowHeight / 10 * 5.6);
+  text("Who?", windowWidth / 3.5, windowHeight / 10 * 6.1);
 
   fill("#9fdfff");
-  text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12: Beatrice Foresti, Pietro Forino, Emanuele Ghebaur and Michele La Rosa.", windowWidth / 3.5, windowHeight / 10 * 5.9);
+  textFont(myFont);
+  textSize(20);
+  textAlign(LEFT);
+  text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12: Beatrice Foresti, Pietro Forino, Emanuele Ghebaur and Michele La Rosa.", windowWidth / 3.5, windowHeight / 10 * 6.4);
 
 }
 
