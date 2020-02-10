@@ -1,7 +1,6 @@
 var myFont;
 var myFont2;
 var myFont3;
-var text;
 
 function preload() {
 
@@ -17,21 +16,6 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
   background("black");
-
-  // home = createButton("Return to Home");
-  // home.position(windowWidth / 2 - 100, windowHeight / 10 * 9);
-  // home.mousePressed(goHome);
-  //
-  // selectAll("button").forEach(item => {
-  //   item.size(200, 50);
-  //   item.style('background-color', "black");
-  //   item.style("color", "#ff00ff");
-  //   item.style("border-color", "#00ffff");
-  //   item.style("font-size", "15px");
-  //   item.style("font-family", "CircularStd-Book");
-  //   item.mouseOver(changeColor);
-  //   item.mouseOut(beginningColor);
-  // });
 
 }
 
@@ -54,21 +38,16 @@ function draw() {
   fill("#00ffff");
   ellipse(a, b, 20);
 
-  //logo
+  //Logo
   imageMode(CENTER);
   logo.resize(0, 60);
   image(logo, windowWidth / 2, windowHeight / 10 * 0.7);
 
-  //authors
-  authors.resize(0, 200);
+  //Authors
+  authors.resize(0, 230);
   image(authors, windowWidth / 2, windowHeight / 10 * 8.2);
 
-  //text
-  // if (windowWidth < 400) {
-  //   textAlign(CENTER);
-  //   textSize(25);
-  //   text.positionX(windowWidth/2);
-  // }
+  //Text
 
   fill("#00ffff");
   textFont(myFont2);
@@ -107,20 +86,11 @@ function draw() {
   text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12:", windowWidth / 2, windowHeight / 10 * 6.4);
 
 
-
 }
 
 function goHome() {
   window.open("index.php", "_self");
 }
-
-// function changeColor() {
-//   this.style('background-color', "#3f3f3f");
-// }
-//
-// function beginningColor() {
-//   this.style('background-color', "black");
-// }
 
 function windowResized() {
   //resizing the canvas when the window is resized
