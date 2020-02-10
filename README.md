@@ -1,4 +1,4 @@
-![Header](assets/header.png)
+![Header](assets/logo.png)
 
 ### Team members:
 
