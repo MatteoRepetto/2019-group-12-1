@@ -15,8 +15,8 @@ var erase = 0;
 var isDrawing = false;
 var isErasing = false;
 
-var k = Math.random() * (1.9 - 1.3) + 1.3; // creo variabili randomiche per scalare e spostare lo sketch da completare - scale tra 1/3 e 1/2 [da definire meglio]
-var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // utilizzo di Math.round perchè prima della funzione draw e perchè globali [da definire meglio o valori di traslazione]
+var k = Math.random() * (1.9 - 1.3) + 1.3; // create random variables to scale and move the sketch that you have to complete
+var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // use of Math.round because it is before draw function and it is global
 var fy = Math.random() * (1920 / 8 * ((k - 1) / k) - 1);
 
 function setup() {
@@ -73,17 +73,17 @@ console.log(Math.round(fx), Math.round(fy), Math.round(k));
 function draw() {
 
   push()
-  translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
-  scale(1 / k); // scale dello sketch
+  translate(fx * 4, fy * 4); // translate the whole sketch
+  scale(1 / k); // scale of the sketch
   background(coloreDue);
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-  coloreUno = get(fx * 4+2, fy * 4+1); // prendo il colore di sfondo
-  coloreDue = get(fx * 4, fy * 4); // prendo il colore di traccia
+  coloreUno = get(fx * 4+2, fy * 4+1); // pick up the background color
+  coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
 
   push()
-  scale(k); // scale dello sketch
-  translate(-fx * 4,-fy * 4); // traslazione dello sketch complessivo
+  scale(k); // scale of the sketch
+  translate(-fx * 4,-fy * 4); // translate of the whole sketch
     noStroke()
     fill(coloreUno)
     rect(0,0,2,2)
@@ -93,12 +93,12 @@ function draw() {
 
   pop()
   push()
-  translate(fx, fy); // traslazione dello sketch complessivo
-  scale(1 / k); // scale dello sketch
+  translate(fx, fy); // translate of the whole sketch
+  scale(1 / k); // scale of the sketch
 
   if (isDrawing) {
     var point = {
-      x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
+      x: (mouseX - fx) * k, // compensation of translate and previous sketch, both in x and in y
       y: (mouseY - fy) * k
     };
     currentPath.push(point);
@@ -148,8 +148,8 @@ function draw() {
   //
   // }
 
-  translate(fx * 4, fy * 4); // traslazione dello sketch complessivo
-  scale(1 / k); // scale dello sketch
+  translate(fx * 4, fy * 4); // translate of the whole sketch
+  scale(1 / k); // scale of the sketch
 
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
