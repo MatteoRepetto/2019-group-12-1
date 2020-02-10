@@ -54,7 +54,6 @@ The interactions are meant to be as intuitive and minimal as possible.
 
   The best solution we came up with was a combination of the **html2canvas.js** library and the **imgBase64** encoding, which allowed to create a good quality and very light file:
 
-      ‘’’
       $(function() {
       $("#saveLoop").click(function() {
         html2canvas($("#screen"), {
@@ -80,7 +79,6 @@ The interactions are meant to be as intuitive and minimal as possible.
            }
          });
        });
-    ‘’’
 
  </li>
    <li>
