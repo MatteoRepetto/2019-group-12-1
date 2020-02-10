@@ -23,7 +23,7 @@ function setup() {
   button2.mousePressed(openAbout);
 
   button3 = createButton("Creative Coding 2019/2020");
-  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.0);
+  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.1);
   button3.mousePressed(openCourse);
 
   selectAll("button").forEach(item => {
