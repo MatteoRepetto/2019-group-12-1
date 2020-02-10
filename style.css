@@ -42,8 +42,6 @@ h1 {
   max-width: 40px;
   bottom: 20px;
   right: 30px;
-  /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-  filter: drop-shadow(5px 5px 5px #000); */
 }
 
 #eraseButton{
@@ -51,8 +49,6 @@ h1 {
   max-width: 40px;
   bottom: 20px;
   left: 30px;
-  /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-  filter: drop-shadow(5px 5px 5px #000); */
 }
 
 
@@ -61,8 +57,6 @@ h1 {
   max-width: 40px;
   top: 20px;
   left: 30px;
-  /* -webkit-filter: drop-shadow(5px 5px 5px #000);
-  filter: drop-shadow(5px 5px 5px #000); */
 }
 
 #modal {
