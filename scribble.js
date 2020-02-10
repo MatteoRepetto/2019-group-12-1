@@ -1,4 +1,3 @@
-
 var img1;
 var coloreUno = '';
 var coloreDue = '';
@@ -58,18 +57,13 @@ function touchEnded() {
 }
 
 function eraseLine() {
-  // erase = 1
-  // isErasing = true
-  // console.log(erase)
   drawing = [];
 }
 
-// function drawLine() {
-//   erase = 0;
-//   console.log(erase)
-// }
+
 
 console.log(Math.round(fx), Math.round(fy), Math.round(k));
+
 function draw() {
 
   push()
@@ -78,17 +72,17 @@ function draw() {
   background(coloreDue);
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-  coloreUno = get(fx * 4+2, fy * 4+1); // pick up the background color
+  coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
   coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
 
   push()
   scale(k); // scale of the sketch
-  translate(-fx * 4,-fy * 4); // translate of the whole sketch
-    noStroke()
-    fill(coloreUno)
-    rect(0,0,2,2)
-    fill(coloreDue)
-    rect(3,0,2,2)
+  translate(-fx * 4, -fy * 4); // translate of the whole sketch
+  noStroke()
+  fill(coloreUno)
+  rect(0, 0, 2, 2)
+  fill(coloreDue)
+  rect(3, 0, 2, 2)
   pop()
 
   pop()
@@ -118,35 +112,6 @@ function draw() {
   }
   pop()
 
-  // if (erase == 1) {
-  //   push()
-  //   translate(fx, fy); // traslazione dello sketch complessivo
-  //   scale(1 / k); // scale dello sketch
-  //
-  //   if (isDrawing) {
-  //     console.log('i')
-  //     var pointErase = {
-  //       x: (mouseX - fx) * k, // compensazione di traslazione e sketch precedente, sia in x che in y
-  //       y: (mouseY - fy) * k
-  //     };
-  //     currentErase.push(pointErase);
-  //   }
-  //   stroke(coloreDue);
-  //   strokeWeight(30);
-  //   noFill();
-  //
-  //   for (var i = 0; i < drawingErase.length; i++) {
-  //     pathErase = drawingErase[i];
-  //
-  //     beginShape();
-  //     for (var j = 0; j < pathErase.length; j++) {
-  //       vertex(pathErase[j].x, pathErase[j].y);
-  //     }
-  //     endShape();
-  //   }
-  //   pop()
-  //
-  // }
 
   translate(fx * 4, fy * 4); // translate of the whole sketch
   scale(1 / k); // scale of the sketch
