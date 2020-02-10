@@ -2,67 +2,75 @@ var myFont;
 
 function preload() {
 
-    myFont = loadFont('./assets/CircularStd-Black.otf');
-    logo = loadImage("./assets/logo.png");
+  myFont = loadFont('./assets/CircularStd-Black.otf');
+  logo = loadImage("./assets/logo.png");
 
 }
 
 function setup() {
 
-    createCanvas(windowWidth, windowHeight);
-    background("black");
+  createCanvas(windowWidth, windowHeight);
+  background("black");
 
-    button1 = createButton("START SCRIBBLING");
-    button1.position(windowWidth / 2 - 100, windowHeight / 10 * 5.5);
-    button1.mousePressed(openScribble);
+  //buttons
 
-    button2 = createButton("Learn More");
-    button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.2);
-    button2.mousePressed(openAbout);
+  button1 = createButton("START SCRIBBLING");
+  button1.position(windowWidth / 2 - 100, windowHeight / 10 * 5.5);
+  button1.mousePressed(openScribble);
 
-    button3 = createButton("Creative Coding 2019/2020");
-    button3.position(windowWidth / 2 - 100, windowHeight / 10 * 6.9);
-    button3.mousePressed(openCourse);
+  button2 = createButton("About");
+  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.3);
+  button2.mousePressed(openAbout);
 
-    selectAll("button").forEach(item => {
-        item.size(200, 50);
-        item.style('background-color', "black");
-        item.style("color", "#ffb3ff");
-        item.style("border-color", "#9fdfff");
-        item.style("font-size", "15px");
-        item.style("font-family", "CircularStd-Black");
-        item.mouseOver(changeColor);
-        item.mouseOut(beginningColor);
-    });
+  button3 = createButton("Creative Coding 2019/2020");
+  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.0);
+  button3.mousePressed(openCourse);
+
+  selectAll("button").forEach(item => {
+    item.size(200, 50);
+    item.style('background-color', "black");
+    item.style("color", "#ffb3ff");
+    item.style("border-color", "#9fdfff");
+    item.style("border-radius", "6px");
+    item.style("font-size", "15px");
+    item.style("font-family", "CircularStd-Black");
+    item.mouseOver(changeColor);
+    item.mouseOut(beginningColor);
+  });
 }
 
 var iterator = 0;
 
 function draw() {
 
-    //Updating a semitransparent background for a trail effect, which hints at the act of scribbling
-    background('rgba(4, 5, 28, 0.05)');
+  //Updating a semitransparent background for a trail effect, which hints at the act of scribbling
+  background('rgba(4, 5, 28, 0.05)');
 
-    iterator++;
-    var x = noise(iterator / 200 + 400) * height;
-    var y = (noise(iterator / 500 + 2000) * width) - 300;
-    noStroke();
-    fill("#ffb3ff");
-    ellipse(x, y, 20);
+  iterator++;
+  var x = noise(iterator / 200 + 400) * height;
+  var y = (noise(iterator / 500 + 2000) * width) - 300;
+  noStroke();
+  fill("#ffb3ff");
+  ellipse(x, y, 20);
 
-    var a = 900 + noise(-iterator / 200 + 400) * height;
-    var b = (noise(-iterator / 500 + 2000) * width) - 300;
-    fill("#9fdfff");
-    ellipse(a, b, 20);
+  var a = 900 + noise(-iterator / 200 + 400) * height;
+  var b = (noise(-iterator / 500 + 2000) * width) - 300;
+  fill("#9fdfff");
+  ellipse(a, b, 20);
 
-    imageMode(CENTER);
-    image(logo, windowWidth / 2, windowHeight / 3.2);
+  // logo
+  if (windowWidth < 400) {
+    logo.resize(windowWidth * 0.7, 0)
+  }
 
-    // fill("#9fdfff");
-    // textFont(myFont);
-    // textSize(15);
-    // textAlign(CENTER);
-    // text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
+  imageMode(CENTER);
+  image(logo, windowWidth / 2, windowHeight / 3.2);
+
+  fill("#9fdfff");
+  textFont(myFont);
+  textSize(20);
+  textAlign(CENTER);
+  text("Create infinite drawings \nand collaborate with others!", windowWidth / 2, windowHeight / 10 * 4.4);
 
 }
 
@@ -75,23 +83,23 @@ function openScribble() {
 }
 
 function openCourse() {
-    window.open("https://drawwithcode.github.io/2019/");
+  window.open("https://drawwithcode.github.io/2019/");
 }
 
 function openAbout() {
-    window.open("about.php", "_self");
+  window.open("about.php", "_self");
 }
 
 //All these create a hover effect on the buttons
 function changeColor() {
-    this.style('background-color', "#3f3f3f");
+  this.style('background-color', "#3f3f3f");
 }
 
 function beginningColor() {
-    this.style('background-color', "black");
+  this.style('background-color', "black");
 }
 
 function windowResized() {
-    //resizing the canvas when the window is resized
-    resizeCanvas(windowWidth, windowWidth);
+  //resizing the canvas when the window is resized
+  resizeCanvas(windowWidth, windowWidth);
 }

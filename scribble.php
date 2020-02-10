@@ -54,12 +54,12 @@
 
   <div id="modal">
     <div id="popup">
-        <p id="testo">Great Job!</br>Your artwork is ready to be send into the Loop.</p>
+        <p id="testo">Great Job!</br>Your artwork is ready to be sent to the Loop.</p>
       <span id="closePopup">x</span>
 
       <a href="#" id="galleryLink">
-        <div id="buttonGallery"  onclick="galleria()" ontouchstart="galleria()">save in the Loop</div>
-        <div id="buttonGallery2"  onclick="apriGalleria()" ontouchstart="apriGalleria()">go to the gallery</div>
+        <div id="buttonGallery"  onclick="galleria()" ontouchstart="galleria()">Save in the Loop</div>
+        <div id="buttonGallery2"  onclick="apriGalleria()" ontouchstart="apriGalleria()">Go to the Gallery Loop</div>
 
       </a>
     </div>
@@ -117,7 +117,7 @@
 
           $('#buttonGallery').hide()
           $('#buttonGallery2').show()
-          $("#testo").text('Sent! Thanks for your contribution'); //cambio testo popup
+          $("#testo").text('Sent! Thank you for your contribution'); //cambio testo popup
          });
        }
      }

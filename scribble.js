@@ -24,8 +24,8 @@ function setup() {
   canvas.mousePressed(startPath);
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
-  img1 = loadImage(phpImage)
-  console.log(phpImage)
+  img1 = loadImage(phpImage);
+  console.log(phpImage);
 }
 
 function startPath() {
