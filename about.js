@@ -60,15 +60,15 @@ function draw() {
   image(logo, windowWidth / 2, windowHeight / 10 * 0.7);
 
   //authors
-  authors.resize(0, 180);
+  authors.resize(0, 200);
   image(authors, windowWidth / 2, windowHeight / 10 * 8.2);
 
   //text
-  if (windowWidth < 400) {
-    textAlign(CENTER);
-    textSize(25);
-    text.positionX(windowWidth/2);
-  }
+  // if (windowWidth < 400) {
+  //   textAlign(CENTER);
+  //   textSize(25);
+  //   text.positionX(windowWidth/2);
+  // }
 
   fill("#00ffff");
   textFont(myFont2);
@@ -79,38 +79,34 @@ function draw() {
   fill("#ff00ff");
   textFont(myFont2);
   textSize(25);
-  textAlign(LEFT);
-  text("Where?", windowWidth / 3.5, windowHeight / 10 * 2);
+  text("Where?", windowWidth / 2, windowHeight / 10 * 2);
 
   fill("#00ffff");
   textFont(myFont);
   textSize(20);
-  textAlign(LEFT);
-  text("While you are waiting for the subway, while you are ''studying'' for the exam, \nwhile you are waiting for your girlfriend or while you are doing that big one, \nScribble Loop will be there to take you by the hand and bring you to a total waste of time.", windowWidth / 3.5, windowHeight / 10 * 2.3);
+  text("While you are waiting for the subway, while you are ''studying'' for the exam, \nwhile you are waiting for your girlfriend or while you are doing that big one, \nScribble Loop will be there to take you by the hand and bring you to a total waste of time.", windowWidth / 2, windowHeight / 10 * 2.3);
 
   fill("#ff00ff");
   textFont(myFont2);
   textSize(25);
-  textAlign(LEFT);
-  text("How?", windowWidth / 3.5, windowHeight / 10 * 3.2);
+  text("How?", windowWidth / 2, windowHeight / 10 * 3.2);
 
   fill("#00ffff");
   textFont(myFont);
   textSize(20);
-  textAlign(LEFT);
-  text("Scribble Loop is a web platform that allows anyone to create infinite drawings \nin collaboration with many other people. Each user can start with a preset scribble \nor can join a scribble that has already been started by other users. \n \nThe aim is to try to include the previous scribbles with your drawing, creating \na collaborative and potentially endless work of art. \n\nWhen you are done, send your scribble to the Loop! \nFuture users will go on with the journey from there.", windowWidth / 3.5, windowHeight / 10 * 3.5);
+  text("Scribble Loop is a web platform that allows anyone to create infinite drawings \nin collaboration with many other people. Each user can start with a preset scribble \nor can join a scribble that has already been started by other users. \n \nThe aim is to try to include the previous scribbles with your drawing, creating \na collaborative and potentially endless work of art. \n\nWhen you are done, send your scribble to the Loop! \nFuture users will go on with the journey from there.", windowWidth / 2, windowHeight / 10 * 3.5);
 
   fill("#ff00ff");
   textFont(myFont2);
   textSize(25);
-  textAlign(LEFT);
-  text("Who?", windowWidth / 3.5, windowHeight / 10 * 6.1);
+  text("Who?", windowWidth / 2, windowHeight / 10 * 6.1);
 
   fill("#00ffff");
   textFont(myFont);
   textSize(20);
-  textAlign(LEFT);
-  text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12: Beatrice Foresti, Pietro Forino, Emanuele Ghebaur and Michele La Rosa.", windowWidth / 3.5, windowHeight / 10 * 6.4);
+  text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12:", windowWidth / 2, windowHeight / 10 * 6.4);
+
+
 
 }
 
