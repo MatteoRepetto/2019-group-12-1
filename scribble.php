@@ -47,9 +47,9 @@
   </div>
   <div id="controller">
     <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')" ontouchstart="window.open('index.php', '_top')"/>
-    <img src="assets/loop.png" id="saveLoop"/>
+    <img src="assets/loop.png" id="saveLoop" onclick="salvaLoop()" ontouchstart="salvaLoop()"/>
     <!-- <img src="assets/draw.png" id="drawButton"onclick="drawLine()"/> -->
-    <img src="assets/erase.png" id="eraseButton" onclick="eraseLine()"/>
+    <img src="assets/erase.png" id="eraseButton" onclick="eraseLine()" ontouchstart="eraseLine()"/>
   </div>
 
   <div id="modal">
@@ -58,109 +58,77 @@
       <span id="closePopup">x</span>
 
       <a href="#" id="galleryLink">
-        <div id="buttonGallery">save in the Loop</div>
+        <div id="buttonGallery"  onclick="galleria()" ontouchstart="galleria()">save in the Loop</div>
+        <div id="buttonGallery2"  onclick="apriGalleria()" ontouchstart="apriGalleria()">go to the gallery</div>
+
       </a>
     </div>
   </div>
 
   <!-- utilizzo di jquery per ottimizzazione con linguaggio PHP + AJAX -->
   <script>
-    $(function() {
-      // mostro il popup al premere del bottone
-        $("#saveLoop").click(function() {
-          $('#controller').fadeOut()
-          $('#modal').fadeIn()
-        });
+  // $(function() {
+  $('#buttonGallery2').hide()
+// mostro il popup al premere del bottone
+  function salvaLoop() {
+    $('#controller').fadeOut()
+    $('#modal').fadeIn()
+  }
 
-        // nascondo il popup al premere della X
-        $("#closePopup").click(function() {
-          $('#controller').fadeIn()
-          $('#modal').fadeOut()
-        })
+// nascondo il popup al premere della X
+  function chiudiPopUp() {
+    $('#controller').fadeIn()
+    $('#modal').fadeOut()
+  }
+    // $("#saveLoop").click(function() {
+    //   $('#controller').fadeOut()
+    //   $('#modal').fadeIn()
+    // });
 
-      var contaGallery = 0 // variabile per salvare solo una volta lo sketch
+    // nascondo il popup al premere della X
+    // $("#closePopup").click(function() {
+    //   $('#controller').fadeIn()
+    //   $('#modal').fadeOut()
+    // })
+    var contaGallery = 0 // variabile per salvare solo una volta lo sketch
 
-      $("#buttonGallery").click(function() {
-         html2canvas($("#screen"), { //utilizzo libreria html2canvas
-          onrendered: function(canvas) {
-            var imgsrc = canvas.toDataURL("image/png");
+    function galleria() {
+      html2canvas($("#screen"), { //utilizzo libreria html2canvas
+       onrendered: function(canvas) {
+         var imgsrc = canvas.toDataURL("image/png");
 
-            $("#newimg").attr('src', imgsrc);
-            $("#img").show();
+         $("#newimg").attr('src', imgsrc);
+         $("#img").show();
 
-            $("#newimg").show();
-            $("#createImg").hide();
-            var dataURL = canvas.toDataURL();
+         $("#newimg").show();
+         $("#createImg").hide();
+         var dataURL = canvas.toDataURL();
 
-          if (contaGallery == 0) { //salvataggio effettivo del file, da eseguire una sola volta
-            $.ajax({
-              type: "POST",
-              url: "server.php",
-              data: {
-                imgBase64: dataURL
-              }
-            }).done(function(o) {
-              console.log('saved');
-              contaGallery = 1 // impedisco un nuovo salvataggio
+       if (contaGallery == 0) { //salvataggio effettivo del file, da eseguire una sola volta
+         $.ajax({
+           type: "POST",
+           url: "server.php",
+           data: {
+             imgBase64: dataURL
+           }
+         }).done(function(o) {
+           console.log('saved');
+           contaGallery = 1 // impedisco un nuovo salvataggio
 
-             $("#buttonGallery").text('go to the gallery'); //cambio contenuto pulsante
-             $("#testo").text('Sended! Thank for your contribution'); //cambio testo popup
-             $("#galleryLink").attr('href','gallery.php'); //attribuisco un link al pulsante (aggiorno link da #)
-            });
-          }
-        }
-        });
-      });
+          $('#buttonGallery').hide()
+          $('#buttonGallery2').show()
+          $("#testo").text('Sended! Thank for your contribution'); //cambio testo popup
+         });
+       }
+     }
+     });
 
-      //touch
+    }
+    function apriGalleria() {
+      window.open("gallery.php","_self")
+}
 
-      // mostro il popup al premere del bottone
-        $("#saveLoop").on('tap', function() {
-          $('#controller').fadeOut()
-          $('#modal').fadeIn()
-        });
 
-        // nascondo il popup al premere della X
-        $("#closePopup").on('tap', function() {
-          $('#controller').fadeIn()
-          $('#modal').fadeOut()
-        })
-
-      var contaGallery = 0 // variabile per salvare solo una volta lo sketch
-
-      $("#buttonGallery").on('tap', function() {
-         html2canvas($("#screen"), { //utilizzo libreria html2canvas
-          onrendered: function(canvas) {
-            var imgsrc = canvas.toDataURL("image/png");
-
-            $("#newimg").attr('src', imgsrc);
-            $("#img").show();
-
-            $("#newimg").show();
-            $("#createImg").hide();
-            var dataURL = canvas.toDataURL();
-
-          if (contaGallery == 0) { //salvataggio effettivo del file, da eseguire una sola volta
-            $.ajax({
-              type: "POST",
-              url: "server.php",
-              data: {
-                imgBase64: dataURL
-              }
-            }).done(function(o) {
-              console.log('saved');
-              contaGallery = 1 // impedisco un nuovo salvataggio
-
-             $("#buttonGallery").text('go to the gallery'); //cambio contenuto pulsante
-             $("#testo").text('Sended! Thank for your contribution'); //cambio testo popup
-             $("#galleryLink").attr('href','gallery.php'); //attribuisco un link al pulsante (aggiorno link da #)
-            });
-          }
-        }
-        });
-      });
-
-    });
 
   </script>
 </body>

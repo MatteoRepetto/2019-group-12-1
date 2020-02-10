@@ -99,7 +99,7 @@ a{
   text-decoration: none;
 }
 
-#buttonGallery {
+#buttonGallery, #buttonGallery2 {
   text-align:center;
   background: black;
   border: 2px solid #ffb3ff;
@@ -114,7 +114,7 @@ a{
   cursor: pointer;
 }
 
-#buttonGallery:hover {
+#buttonGallery:hover, #buttonGallery2:hover {
   background: #ffb3ff;
   border: 2px solid #ffb3ff;
   color: black;
