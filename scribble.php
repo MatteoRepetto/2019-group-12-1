@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <script language="javascript" type="text/javascript" src="addons/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="addons/p5.dom.min.js"></script>
@@ -81,6 +81,54 @@
       var contaGallery = 0 // variabile per salvare solo una volta lo sketch
 
       $("#buttonGallery").click(function() {
+         html2canvas($("#screen"), { //utilizzo libreria html2canvas
+          onrendered: function(canvas) {
+            var imgsrc = canvas.toDataURL("image/png");
+
+            $("#newimg").attr('src', imgsrc);
+            $("#img").show();
+
+            $("#newimg").show();
+            $("#createImg").hide();
+            var dataURL = canvas.toDataURL();
+
+          if (contaGallery == 0) { //salvataggio effettivo del file, da eseguire una sola volta
+            $.ajax({
+              type: "POST",
+              url: "server.php",
+              data: {
+                imgBase64: dataURL
+              }
+            }).done(function(o) {
+              console.log('saved');
+              contaGallery = 1 // impedisco un nuovo salvataggio
+
+             $("#buttonGallery").text('go to the gallery'); //cambio contenuto pulsante
+             $("#testo").text('Sended! Thank for your contribution'); //cambio testo popup
+             $("#galleryLink").attr('href','gallery.php'); //attribuisco un link al pulsante (aggiorno link da #)
+            });
+          }
+        }
+        });
+      });
+
+      //touch
+
+      // mostro il popup al premere del bottone
+        $("#saveLoop").on('tap', function() {
+          $('#controller').fadeOut()
+          $('#modal').fadeIn()
+        });
+
+        // nascondo il popup al premere della X
+        $("#closePopup").on('tap', function() {
+          $('#controller').fadeIn()
+          $('#modal').fadeOut()
+        })
+
+      var contaGallery = 0 // variabile per salvare solo una volta lo sketch
+
+      $("#buttonGallery").on('tap', function() {
          html2canvas($("#screen"), { //utilizzo libreria html2canvas
           onrendered: function(canvas) {
             var imgsrc = canvas.toDataURL("image/png");

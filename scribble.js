@@ -78,7 +78,7 @@ function draw() {
   background(coloreDue);
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-  coloreUno = get(fx * 4+1, fy * 4+1); // prendo il colore di sfondo
+  coloreUno = get(fx * 4+2, fy * 4+1); // prendo il colore di sfondo
   coloreDue = get(fx * 4, fy * 4); // prendo il colore di traccia
 
   push()
