@@ -24,8 +24,8 @@ body {
 <body>
   <img src="assets/logo.png" id="mylogo"/>
 
-  <h1 style="position: absolute;  left: 5%; top: 48%;">Try to merge the previous scribble <br> in your own drawing! </br></h1>
-  <h1 style="position: absolute;  right: 5%; top: 48%;">When you're done, press <br> the Loop button in the bottom-right corner. </br></h1>
+  <h1 style="position: absolute;  left: 5%; top: 30%;">Try to merge the previous scribble <br> in your own drawing! </br></h1>
+  <h1 style="position: absolute;  right: 5%; bottom: 20%;">When you're done, <br> press the Loop button </br> <br> in the bottom-right corner. </br></h1>
   <!-- <h1 style="position: absolute; bottom: 2%;color:white; left: 43%;"></h1> -->
 
   <div class="content">
