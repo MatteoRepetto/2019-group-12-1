@@ -21,11 +21,11 @@ body {
 </style>
 </head>
 <body>
-
-  <h1 style="color:white; text-align: center">logo</h1>
-  <h1 style="position: absolute; color:white; left: 10%; top: 48%;">scribble + breve testo</h1>
-  <h1 style="position: absolute; color:white; right: 10%; top: 48%;">scribble + breve testo</h1>
-  <h1 style="position: absolute; bottom: 2%;color:white; left: 43%;">deve essere figo</h1>
+  <img src="assets/logo.png" align="middle"/>
+  <h1 style="color:white; text-align: center"></h1>
+  <h1 style="position: absolute;  left: 10%; top: 48%;">Try to merge the previous scribble in your own drawing!</h1>
+  <h1 style="position: absolute;  right: 10%; top: 48%;">When you're done, press the Loop button in the bottom-right corner.</h1>
+  <h1 style="position: absolute; bottom: 2%;color:white; left: 43%;"></h1>
 
 
 
