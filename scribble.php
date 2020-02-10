@@ -48,7 +48,6 @@
   <div id="controller">
     <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')" ontouchstart="window.open('index.php', '_top')"/>
     <img src="assets/loop.png" id="saveLoop" onclick="salvaLoop()" ontouchstart="salvaLoop()"/>
-    <!-- <img src="assets/draw.png" id="drawButton"onclick="drawLine()"/> -->
     <img src="assets/erase.png" id="eraseButton" onclick="eraseLine()" ontouchstart="eraseLine()"/>
   </div>
 
@@ -79,17 +78,8 @@
     $('#controller').fadeIn()
     $('#modal').fadeOut()
   }
-    // $("#saveLoop").click(function() {
-    //   $('#controller').fadeOut()
-    //   $('#modal').fadeIn()
-    // });
 
-    // nascondo il popup al premere della X
-    // $("#closePopup").click(function() {
-    //   $('#controller').fadeIn()
-    //   $('#modal').fadeOut()
-    // })
-    var contaGallery = 0 // var to save sketch once
+  var contaGallery = 0 // var to save sketch once
 
     function galleria() {
       html2canvas($("#screen"), { //use of library html2canvas
