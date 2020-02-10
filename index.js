@@ -70,7 +70,7 @@ function draw() {
   textFont(myFont);
   textSize(20);
   textAlign(CENTER);
-  text("Create infinite drawings and collaborate with others!", windowWidth / 2, windowHeight / 10 * 4.4);
+  text("Create infinite drawings \nand collaborate with others!", windowWidth / 2, windowHeight / 10 * 4.4);
 
 }
 
