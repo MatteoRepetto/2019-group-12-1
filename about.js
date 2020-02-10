@@ -1,6 +1,7 @@
 var myFont;
 var myFont2;
 var myFont3;
+var text;
 
 function preload() {
 
@@ -60,11 +61,13 @@ function draw() {
 
   //authors
   authors.resize(0, 180);
-  image(authors, windowWidth / 2, windowHeight / 10 * 8);
+  image(authors, windowWidth / 2, windowHeight / 10 * 8.2);
 
   //text
   if (windowWidth < 400) {
-    text.positionX(windowWidth/5);
+    textAlign(CENTER);
+    textSize(25);
+    text.positionX(windowWidth/2);
   }
 
   fill("#9fdfff");
@@ -75,7 +78,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(30);
+  textSize(25);
   textAlign(LEFT);
   text("Where?", windowWidth / 3.5, windowHeight / 10 * 2);
 
@@ -87,7 +90,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(30);
+  textSize(25);
   textAlign(LEFT);
   text("How?", windowWidth / 3.5, windowHeight / 10 * 3.2);
 
@@ -99,7 +102,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(30);
+  textSize(25);
   textAlign(LEFT);
   text("Who?", windowWidth / 3.5, windowHeight / 10 * 6.1);
 
@@ -115,13 +118,13 @@ function goHome() {
   window.open("index.php", "_self");
 }
 
-function changeColor() {
-  this.style('background-color', "#3f3f3f");
-}
-
-function beginningColor() {
-  this.style('background-color', "black");
-}
+// function changeColor() {
+//   this.style('background-color', "#3f3f3f");
+// }
+//
+// function beginningColor() {
+//   this.style('background-color', "black");
+// }
 
 function windowResized() {
   //resizing the canvas when the window is resized
