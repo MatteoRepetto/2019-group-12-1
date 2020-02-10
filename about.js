@@ -78,7 +78,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(30);
+  textSize(25);
   textAlign(LEFT);
   text("Where?", windowWidth / 3.5, windowHeight / 10 * 2);
 
@@ -90,7 +90,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(30);
+  textSize(25);
   textAlign(LEFT);
   text("How?", windowWidth / 3.5, windowHeight / 10 * 3.2);
 
@@ -102,7 +102,7 @@ function draw() {
 
   fill("#ffb3ff");
   textFont(myFont2);
-  textSize(30);
+  textSize(25);
   textAlign(LEFT);
   text("Who?", windowWidth / 3.5, windowHeight / 10 * 6.1);
 
