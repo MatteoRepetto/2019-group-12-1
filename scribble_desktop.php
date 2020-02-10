@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <img src="assets/logo.png" id="mylogo"/>
+  <img src="assets/logo.png" id="mylogo" style="margin-top: 5vh"/>
 
   <h1 style="position: absolute;  left: 10%; top: 20%;">Try to merge the previous scribble <br> in your own drawing! </br></h1>
   <h1 style="position: absolute;  right: 10%; bottom: 20%;">When you're done, <br> press the Loop button <br> in the bottom-right corner. </br></h1>
