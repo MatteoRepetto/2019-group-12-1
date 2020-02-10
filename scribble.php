@@ -117,7 +117,7 @@
 
           $('#buttonGallery').hide()
           $('#buttonGallery2').show()
-          $("#testo").text('Sent! Thanks for your contribution'); //cambio testo popup
+          $("#testo").text('Sent! Thank you for your contribution'); //cambio testo popup
          });
        }
      }
