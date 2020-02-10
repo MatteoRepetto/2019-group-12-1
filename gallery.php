@@ -19,7 +19,7 @@
 <body>
   <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')"/>
 
-  <div style="text-align: center; color: #9fdfff">
+  <div style="text-align: center; color: #00ffff">
     <h1>Scribble</br>Gallery</h1>
   </div>
   <?php
@@ -45,7 +45,7 @@
 
       .bm-grid-item-' . $transient . ' {
         display: inline-block;
-        background: #ffb3ff;
+        background: #ff00ff;
         margin: 0 0 10px;
         padding: 3px 3px 0px 3px;
       }

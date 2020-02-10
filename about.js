@@ -25,8 +25,8 @@ function setup() {
   // selectAll("button").forEach(item => {
   //   item.size(200, 50);
   //   item.style('background-color', "black");
-  //   item.style("color", "#ffb3ff");
-  //   item.style("border-color", "#9fdfff");
+  //   item.style("color", "#ff00ff");
+  //   item.style("border-color", "#00ffff");
   //   item.style("font-size", "15px");
   //   item.style("font-family", "CircularStd-Book");
   //   item.mouseOver(changeColor);
@@ -46,12 +46,12 @@ function draw() {
   var x = noise(iterator / 200 + 400) * height;
   var y = (noise(iterator / 500 + 2000) * width) - 300;
   noStroke();
-  fill("#ffb3ff");
+  fill("#ff00ff");
   ellipse(x, y, 20);
 
   var a = 900 + noise(-iterator / 200 + 400) * height;
   var b = (noise(-iterator / 500 + 2000) * width) - 300;
-  fill("#9fdfff");
+  fill("#00ffff");
   ellipse(a, b, 20);
 
   //logo
@@ -70,43 +70,43 @@ function draw() {
     text.positionX(windowWidth/2);
   }
 
-  fill("#9fdfff");
+  fill("#00ffff");
   textFont(myFont2);
   textSize(50);
   textAlign(CENTER);
   text("About", windowWidth / 2, windowHeight / 10 * 1.5);
 
-  fill("#ffb3ff");
+  fill("#ff00ff");
   textFont(myFont2);
   textSize(25);
   textAlign(LEFT);
   text("Where?", windowWidth / 3.5, windowHeight / 10 * 2);
 
-  fill("#9fdfff");
+  fill("#00ffff");
   textFont(myFont);
   textSize(20);
   textAlign(LEFT);
   text("While you are waiting for the subway, while you are ''studying'' for the exam, \nwhile you are waiting for your girlfriend or while you are doing that big one, \nScribble Loop will be there to take you by the hand and bring you to a total waste of time.", windowWidth / 3.5, windowHeight / 10 * 2.3);
 
-  fill("#ffb3ff");
+  fill("#ff00ff");
   textFont(myFont2);
   textSize(25);
   textAlign(LEFT);
   text("How?", windowWidth / 3.5, windowHeight / 10 * 3.2);
 
-  fill("#9fdfff");
+  fill("#00ffff");
   textFont(myFont);
   textSize(20);
   textAlign(LEFT);
   text("Scribble Loop is a web platform that allows anyone to create infinite drawings \nin collaboration with many other people. Each user can start with a preset scribble \nor can join a scribble that has already been started by other users. \n \nThe aim is to try to include the previous scribbles with your drawing, creating \na collaborative and potentially endless work of art. \n\nWhen you are done, send your scribble to the Loop! \nFuture users will go on with the journey from there.", windowWidth / 3.5, windowHeight / 10 * 3.5);
 
-  fill("#ffb3ff");
+  fill("#ff00ff");
   textFont(myFont2);
   textSize(25);
   textAlign(LEFT);
   text("Who?", windowWidth / 3.5, windowHeight / 10 * 6.1);
 
-  fill("#9fdfff");
+  fill("#00ffff");
   textFont(myFont);
   textSize(20);
   textAlign(LEFT);

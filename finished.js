@@ -29,8 +29,8 @@ function setup() {
     selectAll("button").forEach(item => {
         item.size(200, 50);
         item.style('background-color', "black");
-        item.style("color", "#ffb3ff");
-        item.style("border-color", "#9fdfff");
+        item.style("color", "#ff00ff");
+        item.style("border-color", "#00ffff");
         item.style("font-size", "15px");
         item.style("font-family", "CircularStd-Book");
         item.mouseOver(changeColor);
@@ -50,12 +50,12 @@ function draw() {
     var x = noise(iterator / 200 + 400) * height;
     var y = (noise(iterator / 500 + 2000) * width) - 300;
     noStroke();
-    fill("#ffb3ff");
+    fill("#ff00ff");
     ellipse(x, y, 20);
 
     var a = 900 + noise(-iterator / 200 + 400) * height;
     var b = (noise(-iterator / 500 + 2000) * width) - 300;
-    fill("#9fdfff");
+    fill("#00ffff");
     ellipse(a, b, 20);
 
 
@@ -71,7 +71,7 @@ function draw() {
     ok.resize(0, 350);
     image(ok, windowWidth / 10 * 2, windowHeight / 10 * 5.2);
 
-    fill("#9fdfff");
+    fill("#00ffff");
     textFont(myFont);
     textSize(20);
     textAlign(CENTER);

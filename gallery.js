@@ -16,8 +16,8 @@ function setup() {
     home.size(200, 50);
     home.mousePressed(goHome);
     home.style('background-color', "black");
-    home.style("color", "#ffb3ff");
-    home.style("border-color", "#9fdfff");
+    home.style("color", "#ff00ff");
+    home.style("border-color", "#00ffff");
     home.style("font-size", "15px");
     home.style("font-family", "CircularStd-Book");
     home.mouseOver(changeColor1);
@@ -36,27 +36,27 @@ function draw() {
     var x = noise(iterator / 200 + 400) * height;
     var y = (noise(iterator / 500 + 2000) * width) - 300;
     noStroke();
-    fill("#ffb3ff");
+    fill("#ff00ff");
     ellipse(x, y, 20);
 
     var a = 900 + noise(-iterator / 200 + 400) * height;
     var b = (noise(-iterator / 500 + 2000) * width) - 300;
-    fill("#9fdfff");
+    fill("#00ffff");
     ellipse(a, b, 20);
 
-    fill("#9fdfff");
+    fill("#00ffff");
     textFont(myFont);
     textSize(20);
     textAlign(CENTER);
     text("Welcome to the Loop Gallery! \nHere you can see what the other users have been drawing and some preset scribbles.. \nChoose your next scribble to interact with!", windowWidth / 2, windowHeight / 10 * 2);
 
     strokeWeight(30);
-    stroke("#ffb3ff");
+    stroke("#ff00ff");
     noFill();
     rect(0, 0, windowWidth, windowHeight);
 
     strokeWeight(15);
-    stroke("#9fdfff");
+    stroke("#00ffff");
     noFill();
     rect(0, 0, windowWidth, windowHeight);
 
