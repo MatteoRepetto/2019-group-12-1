@@ -19,11 +19,11 @@ function setup() {
   button1.mousePressed(openScribble);
 
   button2 = createButton("About");
-  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.4);
+  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.3);
   button2.mousePressed(openAbout);
 
   button3 = createButton("Creative Coding 2019/2020");
-  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.1);
+  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.0);
   button3.mousePressed(openCourse);
 
   selectAll("button").forEach(item => {
@@ -68,7 +68,7 @@ function draw() {
 
   fill("#9fdfff");
   textFont(myFont);
-  textSize(15);
+  textSize(20);
   textAlign(CENTER);
   text("Create infinite drawings and collaborate with others!", windowWidth / 2, windowHeight / 10 * 4.4);
 
