@@ -13,20 +13,20 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background("black");
 
-  home = createButton("Return to Home");
-  home.position(windowWidth / 2 - 100, windowHeight / 10 * 9);
-  home.mousePressed(goHome);
-
-  selectAll("button").forEach(item => {
-    item.size(200, 50);
-    item.style('background-color', "black");
-    item.style("color", "#ffb3ff");
-    item.style("border-color", "#9fdfff");
-    item.style("font-size", "15px");
-    item.style("font-family", "CircularStd-Book");
-    item.mouseOver(changeColor);
-    item.mouseOut(beginningColor);
-  });
+  // home = createButton("Return to Home");
+  // home.position(windowWidth / 2 - 100, windowHeight / 10 * 9);
+  // home.mousePressed(goHome);
+  //
+  // selectAll("button").forEach(item => {
+  //   item.size(200, 50);
+  //   item.style('background-color', "black");
+  //   item.style("color", "#ffb3ff");
+  //   item.style("border-color", "#9fdfff");
+  //   item.style("font-size", "15px");
+  //   item.style("font-family", "CircularStd-Book");
+  //   item.mouseOver(changeColor);
+  //   item.mouseOut(beginningColor);
+  // });
 
 }
 
