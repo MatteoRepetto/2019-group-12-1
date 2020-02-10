@@ -12,7 +12,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background("black");
 
-  //buttons
+  //Buttons
 
   button1 = createButton("START SCRIBBLING");
   button1.position(windowWidth / 2 - 100, windowHeight / 10 * 5.5);
@@ -58,7 +58,7 @@ function draw() {
   fill("#00ffff");
   ellipse(a, b, 20);
 
-  // logo
+  //Logo and resize on mobile devices
   if (windowWidth < 400) {
     logo.resize(windowWidth * 0.7, 0)
   }
@@ -66,6 +66,7 @@ function draw() {
   imageMode(CENTER);
   image(logo, windowWidth / 2, windowHeight / 3.2);
 
+  //Claim
   fill("#00ffff");
   textFont(myFont);
   textSize(20);
