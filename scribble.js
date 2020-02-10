@@ -18,7 +18,7 @@ var k = Math.random() * (1.9 - 1.3) + 1.3; // create random variables to scale a
 var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // use of Math.round because it is before draw function and it is global
 var fy = Math.random() * (1920 / 8 * ((k - 1) / k) - 1);
 
-function preload(){
+function preload() {
   img1 = loadImage(phpImage);
 }
 
@@ -28,6 +28,10 @@ function setup() {
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
   console.log(phpImage);
+  image(img1, 0, 0, 1080 / 5, 1920 / 5)
+  coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
+  coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
+  print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
 }
 
 function startPath() {
@@ -75,7 +79,7 @@ function draw() {
 
   coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
   coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
-  print("coloreUno: "+coloreUno,"coloreDue: "+coloreDue);
+  // print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
 
   push()
   scale(k); // scale of the sketch
