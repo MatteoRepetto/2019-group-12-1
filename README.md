@@ -85,7 +85,7 @@ The interactions are meant to be as intuitive and minimal as possible.
  </li>
    <li>
      <b>Storing the pre-saved sketches</b></br>
-  When the png files were created, we needed to remotely save them. Our first option was **firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
+  When the png files were created, we needed to remotely save them. Our first option was **Firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
 
   The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
 
@@ -163,4 +163,4 @@ The interactions are meant to be as intuitive and minimal as possible.
 
 ## Credits ( third libraries used )
 
-P5.js, jQuery, PHP, html2canvas.js, Composer
+**P5.js, jQuery, PHP, html2canvas.js, Composer**
