@@ -26,6 +26,7 @@ function setup() {
   canvas.mouseReleased(endPath);
   img1 = loadImage(phpImage);
   console.log(phpImage);
+  background("teal");
 }
 
 function startPath() {
