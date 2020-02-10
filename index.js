@@ -18,12 +18,12 @@ function setup() {
   button1.position(windowWidth / 2 - 100, windowHeight / 10 * 5.5);
   button1.mousePressed(openScribble);
 
-  button2 = createButton("Learn More");
-  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.2);
+  button2 = createButton("About");
+  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.4);
   button2.mousePressed(openAbout);
 
   button3 = createButton("Creative Coding 2019/2020");
-  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 6.9);
+  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.1);
   button3.mousePressed(openCourse);
 
   selectAll("button").forEach(item => {
@@ -31,6 +31,7 @@ function setup() {
     item.style('background-color', "black");
     item.style("color", "#ffb3ff");
     item.style("border-color", "#9fdfff");
+    item.style("border-radius", "6px");
     item.style("font-size", "15px");
     item.style("font-family", "CircularStd-Black");
     item.mouseOver(changeColor);
@@ -65,11 +66,11 @@ function draw() {
   imageMode(CENTER);
   image(logo, windowWidth / 2, windowHeight / 3.2);
 
-  // fill("#9fdfff");
-  // textFont(myFont);
-  // textSize(15);
-  // textAlign(CENTER);
-  // text("Project by Group 12: \n Beatrice Foresti, Pietro Forino, Emanuele Ghebaur, Michele La Rosa", windowWidth / 2, windowHeight / 10 * 4.4);
+  fill("#9fdfff");
+  textFont(myFont);
+  textSize(15);
+  textAlign(CENTER);
+  text("Create infinite drawings and collaborate with others!", windowWidth / 2, windowHeight / 10 * 4.4);
 
 }
 
