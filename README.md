@@ -1,4 +1,4 @@
-![Header](assets/logo.png)
+![Header](assets/header.png)
 
 ### Team members:
 
@@ -24,7 +24,7 @@
 Our inspiration comes from the artist [Pablo Rochat](http://pablorochat.com). He overcomes the limit of the artist canvas by creating an Instagram Stories “game”: he tags an artist in his story and invites him to go on with his first drawing and re-post it.
 
 We started our project inspired by Pablo’s idea and we made it bigger.
-Scribble Loop is a web platform that allows everyone to create infinite drawings and collaborate with others. Each user can start with a preset drawing or can join a drawing that has already been scribbled by other users.The drawing will be saved and reloaded to allow other users to go on with it. Only two colors are available in every sketch, and you can’t decide the location of the previous resized sketch. These limitations are meant to enchance your creativity!
+Scribble Loop is a web platform that allows everyone to create infinite drawings and collaborate with others. Each user can start with a preset drawing or can join a drawing that has already been scribbled by other users. The drawing will be saved and reloaded to allow other users to go on with it. Only two colors are available in every sketch, and you can’t decide the location of the previous resized sketch. These limitations are meant to enhance your creativity!
 
 ## Design challenges
 
