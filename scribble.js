@@ -18,12 +18,15 @@ var k = Math.random() * (1.9 - 1.3) + 1.3; // create random variables to scale a
 var fx = Math.random() * (1080 / 8 * ((k - 1) / k) - 1); // use of Math.round because it is before draw function and it is global
 var fy = Math.random() * (1920 / 8 * ((k - 1) / k) - 1);
 
+function preload(){
+  img1 = loadImage(phpImage);
+}
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.mousePressed(startPath);
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
-  img1 = loadImage(phpImage);
   console.log(phpImage);
 }
 
