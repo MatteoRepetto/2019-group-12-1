@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title></title>
+  <title>  scribbleLoop | scribble</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
@@ -117,7 +117,7 @@
 
           $('#buttonGallery').hide()
           $('#buttonGallery2').show()
-          $("#testo").text('Sended! Thank for your contribution'); //cambio testo popup
+          $("#testo").text('Sent! Thanks for your contribution'); //cambio testo popup
          });
        }
      }
