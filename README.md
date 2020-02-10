@@ -87,7 +87,6 @@ The interactions are meant to be as intuitive and minimal as possible.
 
   The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
 
-      ‘’’
         $.ajax({
             type: "POST",
             url: "script.php",
@@ -95,11 +94,9 @@ The interactions are meant to be as intuitive and minimal as possible.
                imgBase64: dataURL
             }
         })
-      ‘’’
-
 
       	server.php
-      	‘’’
+      	
       	 $img = $_ POST['imgBase64'];
        	 $img = str_replace('data:image/png;base64,', '', $img);
        	 $img = str_replace(' ', '+', $img);
@@ -107,7 +104,6 @@ The interactions are meant to be as intuitive and minimal as possible.
        $file = 'newSketches/' . uniqid() . '.png';
        $success = file_put_contents($file, $data);
        print $success ? $file : 'Impossibile salvare il file sul server';
-      ‘’’
 
 
  </li>
@@ -117,18 +113,13 @@ The interactions are meant to be as intuitive and minimal as possible.
 
   Php came to our rescue once again: javascript doesn’t allow us to access entire folders, but php does. This way, with a few lines of code, we could assign a variable that would be used in the p5js file and show every image in the “newSketches” folder in a css-managed disposition.
 
-      ‘’’
     <script type="text/javascript">
       phpImage = <?php echo json_encode($randomImage); ?>;
     </script>
-    ‘’’
 
-    ‘’’
      $imagesDir = 'newSketches/';
      $images = glob($imagesDir . ' * .{jpg,jpeg,png,gif}', GLOB_BRACE);
      $randomImage = $images[array_rand($images)];
-    ‘’’
-
 
  </li>
  <li>
@@ -140,14 +131,12 @@ The interactions are meant to be as intuitive and minimal as possible.
   Therefore, with **Composer**, **PHP**, **Heroku** and its optimal communication with repository management directly from Github, we created a totally independent and working php app.
 
     composer.json
-    ‘’’
+    
     {
       "require": {
         "php": "^7.2.0"
       }
     }
-    ‘’’
-
 
  </li>
  <li>
