@@ -4,7 +4,7 @@
 
 -   [Beatrice Foresti](mailto:bea_fiore@live.it)
 -   [Pietro Forino](mailto:pietrof@live.com)
--   [Emanuele ghebaur](mailto:emanueleghebaur@gmail.com)
+-   [Emanuele Ghebaur](mailto:emanueleghebaur@gmail.com)
 -   [Michele La Rosa](mailto:miki.larosa@hotmail.it)
 
 ### Course:
@@ -153,7 +153,7 @@ The interactions are meant to be as intuitive and minimal as possible.
 
  </li>
  <li>
-  <b>Keep track of the color's switching</b></br>
+  <b>Keeping track of the color's switching</b></br>
  </li>
 </ol>
 
