@@ -59,7 +59,7 @@ function draw() {
 
   // logo
   if (windowWidth < 400) {
-    logo.resize(windowWidth * 0.70)
+    logo.resize(windowWidth * 0.7, 0)
   }
 
   imageMode(CENTER);
