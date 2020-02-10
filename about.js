@@ -64,7 +64,7 @@ function draw() {
 
   //text
   if (windowWidth < 400) {
-    textAlign(CENTER);
+    text.positionX(windowWidth/5);
   }
 
   fill("#9fdfff");
