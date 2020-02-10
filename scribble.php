@@ -25,7 +25,7 @@
 <body>
 
 <!-- start php -->
-<?php // codice per salvare la variabile phpImage poi utilizzata in scribble.js
+<?php // code to save var phpImage that is used in scribble.js
   $imagesDir = 'newSketches/';
   $images = glob($imagesDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
   $randomImage = $images[array_rand($images)];
@@ -65,17 +65,16 @@
     </div>
   </div>
 
-  <!-- utilizzo di jquery per ottimizzazione con linguaggio PHP + AJAX -->
+  <!-- use of jquery to optimize with PHP + AJAX language -->
   <script>
-  // $(function() {
   $('#buttonGallery2').hide()
-// mostro il popup al premere del bottone
+// show popup when button is pressed
   function salvaLoop() {
     $('#controller').fadeOut()
     $('#modal').fadeIn()
   }
 
-// nascondo il popup al premere della X
+// press x and close popup
   function chiudiPopUp() {
     $('#controller').fadeIn()
     $('#modal').fadeOut()
@@ -90,10 +89,10 @@
     //   $('#controller').fadeIn()
     //   $('#modal').fadeOut()
     // })
-    var contaGallery = 0 // variabile per salvare solo una volta lo sketch
+    var contaGallery = 0 // var to save sketch once
 
     function galleria() {
-      html2canvas($("#screen"), { //utilizzo libreria html2canvas
+      html2canvas($("#screen"), { //use of library html2canvas
        onrendered: function(canvas) {
          var imgsrc = canvas.toDataURL("image/png");
 
@@ -104,7 +103,7 @@
          $("#createImg").hide();
          var dataURL = canvas.toDataURL();
 
-       if (contaGallery == 0) { //salvataggio effettivo del file, da eseguire una sola volta
+       if (contaGallery == 0) { //save file, execute only once
          $.ajax({
            type: "POST",
            url: "server.php",
@@ -113,11 +112,11 @@
            }
          }).done(function(o) {
            console.log('saved');
-           contaGallery = 1 // impedisco un nuovo salvataggio
+           contaGallery = 1 // prevent a new saving
 
           $('#buttonGallery').hide()
           $('#buttonGallery2').show()
-          $("#testo").text('Sent! Thank you for your contribution'); //cambio testo popup
+          $("#testo").text('Sent! Thank you for your contribution'); //change popup text
          });
        }
      }
