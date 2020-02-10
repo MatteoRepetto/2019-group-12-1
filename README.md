@@ -85,9 +85,31 @@ The interactions are meant to be as intuitive and minimal as possible.
  </li>
    <li>
      <b>Storing the pre-saved sketches</b></br>
-  When the png files were created, we needed to remotely save them. Our first option was **Firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
+  When the png files were created, we needed to remotely save them. Our first option was **firebase** as an image storage service, but its limitations (slow upload, limited space) brought us to try a storage directly on the used server.
 
   The best solution was the **php** language, thanks to his optimal directory management and its ability to write remotely files on a server. With **ajax** we sent the php file in post mode, so that we could write and manage a file on a remote server. We also chose to use the **jquery** library for a better php language management.
+
+      ‘’’
+        $.ajax({
+            type: "POST",
+            url: "script.php",
+            data: {
+               imgBase64: dataURL
+            }
+        })
+      ‘’’
+
+
+      	server.php
+      	‘’’
+      	 $img = $_ POST['imgBase64'];
+       	 $img = str_replace('data:image/png;base64,', '', $img);
+       	 $img = str_replace(' ', '+', $img);
+       $data = base64_decode($img);
+       $file = 'newSketches/' . uniqid() . '.png';
+       $success = file_put_contents($file, $data);
+       print $success ? $file : 'Impossibile salvare il file sul server';
+      ‘’’
 
 
  </li>
@@ -97,6 +119,19 @@ The interactions are meant to be as intuitive and minimal as possible.
 
   Php came to our rescue once again: javascript doesn’t allow us to access entire folders, but php does. This way, with a few lines of code, we could assign a variable that would be used in the p5js file and show every image in the “newSketches” folder in a css-managed disposition.
 
+      ‘’’
+    <script type="text/javascript">
+      phpImage = <?php echo json_encode($randomImage); ?>;
+    </script>
+    ‘’’
+
+    ‘’’
+     $imagesDir = 'newSketches/';
+     $images = glob($imagesDir . ' * .{jpg,jpeg,png,gif}', GLOB_BRACE);
+     $randomImage = $images[array_rand($images)];
+    ‘’’
+
+
  </li>
  <li>
   <b>Dynamic server instead of static server</b></br>
@@ -105,6 +140,16 @@ The interactions are meant to be as intuitive and minimal as possible.
   At first we wanted to upload on a dynamic server just the needed parts, keeping most of the files and the source code on Github. At the end, though, we decided to convert the entire project in php language, to enhance not only the cohesion, but mainly the manageability. This conversion was as simple as necessary, since php perfectly recognizes html language but not the other way around.
 
   Therefore, with **Composer**, **PHP**, **Heroku** and its optimal communication with repository management directly from Github, we created a totally independent and working php app.
+
+    composer.json
+    ‘’’
+    {
+      "require": {
+        "php": "^7.2.0"
+      }
+    }
+    ‘’’
+
 
  </li>
  <li>
