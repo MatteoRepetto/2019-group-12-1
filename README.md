@@ -19,6 +19,7 @@
 
 ![ScribbleLoopPhone](assets/iphone.gif)
 
+
 ## Project idea
 
 **What if you could draw an infinite sketch? And what if you could share it with people and collaborate with them to continue their drawings?**
@@ -34,7 +35,10 @@ Scribble Loop is a web platform that allows everyone to create infinite drawings
 
 The design corporate image is simple and intuitive. We chose bright colors (pink and light blue) on a black background in order to accentuate the bright colors the user will use in its scribbles. The Loop logo represents both the potentially infinite drawings our project is able to create, and the merging (with its gradient) of different people's artworks.
 
+![Logo](assets/designlogo.png)
+
 The design interactions are meant to be as intuitive and minimal as possible. The platform is structured into 4 main pages:
+
 <ul>
   <li> Home page </li>
   <li> About </li>
@@ -42,9 +46,12 @@ The design interactions are meant to be as intuitive and minimal as possible. Th
   <li> Gallery Loop </li>
 </ul>
 
+![Scheme](assets/scheme.png)
+
 In the Home page there are 3 buttons with different functions: start the scribble, go to the About page and go to the Course's page.
 
 The most important page is the Scribble page where the user can draw and express his creativity by interacting with mouse or touch.
+
 <ul>
   <li>
     <b> Mouse interaction </b></br>
@@ -54,10 +61,13 @@ The most important page is the Scribble page where the user can draw and express
     <b> Touch interaction </b></br>
     On the mobile devices the users can draw by touching the screen.  
   </li>
+  <li>  
+    <b> iframe </b></br>
+     We chose to use an iframe in the desktop and not to create a new interface in order to maintain the proportions of the sketches and an overall consistency of content. For this reason we created an iframe with a 16:9 ratio, which is the ratio of most mobile phones.
+   </li>
   </ul>
 
 One of the most innovative elements is the connection between users. In fact each user can interact with a scribble that is the result of the interaction of another user before him. This way the platform is a loop of sketches and it connects people simply by sharing and by drawing scribbles. Other innovative challenges are the limits of this connection: you can’t modify the previous sketch nor his position on yours, but you can only add “creativity” to it, you can't change your brush' color or thickness. Limitations make creativity grow!
-
 
 ## Code challenges
 
@@ -68,7 +78,7 @@ One of the most innovative elements is the connection between users. In fact eac
 
   The first approach was to save the code itself using a server-as-service: Firebase. This choice became inconvenient when we had a second level scribble loop (a “scribble around a scribble, around a scribble”): the transformations management wasn’t intuitive or trackable enough, since the overlapping of multiple transformations needed the same number of counter-transformations to compensate.
 
-  At this point we decided to save the sketch by creating an image file. At first, we tried to utilize the **saveFrames()** function, which on paper seemed a great option because it could use a callback to remotely save the sketch. This strategy quickly revealed itself to be ineffective, since it was a function optimised for saving animations, and a single frame file created an unpredictable and variable file.
+  At this point we decided to save the sketch by creating an image file. At first, we tried to utilize the **saveFrames()** function, which on paper seemed a great option because it could use a callback to remotely save the sketch. This strategy quickly revealed itself to be ineffective, since it was a function optimized for saving animations, and a single frame file created an unpredictable and variable file.
 
   The best solution we came up with was a combination of the **html2canvas.js** library and the **imgBase64** encoding, which allowed to create a good quality and very light file:
 
@@ -123,7 +133,6 @@ One of the most innovative elements is the connection between users. In fact eac
        $success = file_put_contents($file, $data);
        print $success ? $file : 'Impossibile salvare il file sul server';
 
-
  </li>
  <li>
   <b>Picking randomly the skecthes</b></br>
@@ -159,6 +168,28 @@ One of the most innovative elements is the connection between users. In fact eac
  </li>
  <li>
   <b>Keeping track of the color's switching</b></br>
+  Keeping track of the color was one of the hardest challenge of the project. We considered to create a json for the storage of the colors, but it was an unsuitable solution for a project that aims to create infinite sketches. We also considered to create a sort of metadatas, thanks to the imgBase64 structure which allows, but it was exif matadata, so hardly storable in long sequences.
+
+  We found a solution which allows us to not store the information in an external file, having at the same time a nice level of precision. We drawn two small square of 2 pixels per side in the top-left corner of the 10 initial sketches, and thanks to the get function we could “read” the color and assign their values to the variables coloreUno and coloreDue. With this method we had solved the problem of keeping the colors, without increasing the sizes of the files and the information to read.
+
+      image(img1, 0, 0, 1080 / 5, 1920 / 5)
+
+      coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
+      coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
+
+      background(coloreDue);
+      print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
+
+      push()
+      scale(k); // scale of the sketch
+      translate(-fx * 4, -fy * 4); // translate of the whole sketch
+      noStroke()
+      fill(coloreUno)
+      rect(0, 0, 2, 2)
+      fill(coloreDue)
+      rect(3, 0, 2, 2)
+      pop()
+
  </li>
 </ol>
 
