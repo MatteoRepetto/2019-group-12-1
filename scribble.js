@@ -86,10 +86,10 @@ function draw() {
   translate(-fx * 4, -fy * 4); // translate of the whole sketch
   noStroke()
   //creating 2 squares to store the right colors
-  fill(coloreUno)
-  rect(0, 0, 2, 2)
-  fill(coloreDue)
-  rect(3, 0, 3, 2)
+  // fill(coloreUno)
+  // rect(0, 0, 2, 2)
+  // fill(coloreDue)
+  // rect(3, 0, 3, 2)
   pop()
 
   pop()
