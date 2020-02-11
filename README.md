@@ -15,7 +15,10 @@
 
 ## Images
 
-<img src=”assets/example.gif” alt=”animated” />
+![ScribbleLoopGif](assets/example.gif)
+
+![Screenshot](assets/phone.jpg)
+
 
 
 ## Project idea
