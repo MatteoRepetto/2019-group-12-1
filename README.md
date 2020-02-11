@@ -15,7 +15,8 @@
 
 ## Images
 
-[...]
+<img src=”./assets/example.gif” alt=”animated” />
+
 
 ## Project idea
 
@@ -96,7 +97,7 @@ The interactions are meant to be as intuitive and minimal as possible.
         })
 
       	server.php
-      	
+
       	 $img = $_ POST['imgBase64'];
        	 $img = str_replace('data:image/png;base64,', '', $img);
        	 $img = str_replace(' ', '+', $img);
@@ -131,7 +132,7 @@ The interactions are meant to be as intuitive and minimal as possible.
   Therefore, with **Composer**, **PHP**, **Heroku** and its optimal communication with repository management directly from Github, we created a totally independent and working php app.
 
     composer.json
-    
+
     {
       "require": {
         "php": "^7.2.0"
