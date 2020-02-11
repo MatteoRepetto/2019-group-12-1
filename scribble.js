@@ -76,7 +76,7 @@ function draw() {
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
   coloreUno = get(fx * 4 + 1, fy * 4 + 1); // pick up the background color
-  coloreDue = get(fx * 4+5, fy * 4+1); // pick up the stroke color
+  coloreDue = get(fx * 4+2, fy * 4+1); // pick up the stroke color
 
   background(coloreUno);
   print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
@@ -87,9 +87,9 @@ function draw() {
   noStroke()
   //creating 2 squares to store the right colors
   fill(coloreUno)
-  rect(0, 0, 3, 3)
+  rect(0, 0, 2, 2)
   fill(coloreDue)
-  rect(3, 0, 6, 3)
+  rect(3, 0, 3, 2)
   pop()
 
   pop()
