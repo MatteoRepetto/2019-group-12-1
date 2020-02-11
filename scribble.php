@@ -106,7 +106,7 @@
            contaGallery = 1 // prevent a new saving
 
           $('#buttonGallery').hide()
-          // $('#buttonGallery2').show()
+          $('#buttonGallery2').show()
           $('#buttonGallery3').show()
           $("#testo").text('Sent! Thank you for your contribution'); //change popup text
          });
