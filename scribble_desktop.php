@@ -7,7 +7,7 @@
   <style>
 
     body {
-      background-color: black;
+      background-color: teal;
     }
 
     /* The screen (or content) of the device */
