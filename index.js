@@ -34,7 +34,7 @@ function setup() {
     item.style("border-radius", "6px");
     item.style("font-size", "15px");
     item.style("font-family", "CircularStd-Black");
-    item.style(margin-top: 5vh);
+    item.style("margin-top: 5vh");
     item.mouseOver(changeColor);
     item.mouseOut(beginningColor);
   });
