@@ -8,7 +8,6 @@
     <script language="javascript" type="text/javascript" src="addons/p5.min.js"></script>
     <script language="javascript" type="text/javascript" src="addons/p5.dom.min.js"></script>
     <script language="javascript" type="text/javascript" src="addons/p5.sound.min.js"></script>
-    <link rel="shortcut icon" href="assets/squaredloop.png">
     <script src="index.js"></script>
   </head>
   <body>
