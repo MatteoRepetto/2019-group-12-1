@@ -15,9 +15,11 @@
 
 ## Images
 
+Here's a gif that shows how our project works:
 ![ScribbleLoopGif](assets/example.gif)
 
-![Screenshot](assets/phone.jpg)
+And here's how the same interface looks like from a mobile phone:
+![Screenshot](assets/phone.png)
 
 
 
