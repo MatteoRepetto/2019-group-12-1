@@ -59,7 +59,7 @@
       <a href="#" id="galleryLink">
         <div id="buttonGallery"  onclick="galleria()" ontouchstart="galleria()">Save in the Loop</div>
         <div id="buttonGallery2"  onclick="apriGalleria()" ontouchstart="apriGalleria()">Go to the Gallery Loop</div>
-
+        <div id="buttonGallery3"  onclick="scribbleAgain()" ontouchstart="scribbleAgain()">Scribble again!</div>
       </a>
     </div>
   </div>
@@ -67,6 +67,7 @@
   <!-- use of jquery to optimize with PHP + AJAX language -->
   <script>
   $('#buttonGallery2').hide()
+  $('#buttonGallery3').hide()
 // show popup when button is pressed
   function salvaLoop() {
     $('#controller').fadeOut()
@@ -106,6 +107,7 @@
 
           $('#buttonGallery').hide()
           $('#buttonGallery2').show()
+          $('#buttonGallery3').show()
           $("#testo").text('Sent! Thank you for your contribution'); //change popup text
          });
        }
@@ -115,7 +117,10 @@
     }
     function apriGalleria() {
       window.open("gallery.php","_self")
-}
+    }
+    function scribbleAgain() {
+      window.open("scribble_desktop.php","_self")
+    }
 
 
 
