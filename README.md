@@ -15,15 +15,9 @@
 
 ## Images
 
-Here's a gif that shows how our project works:
+![ScribbleLoopDesktop](assets/example.gif)
 
-![ScribbleLoopGif](assets/example.gif)
-
-And here's how the same interface looks like from a mobile phone:
-
-![Screenshot](assets/phone.png)
-
-
+![ScribbleLoopPhone](assets/iphone.gif)
 
 ## Project idea
 
