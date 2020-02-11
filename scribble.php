@@ -119,7 +119,7 @@
       window.open("gallery.php","_self")
     }
     function scribbleAgain() {
-      window.open("scribble_desktop.php","_self")
+        window.open("scribble.php", "_self");
     }
 
 
