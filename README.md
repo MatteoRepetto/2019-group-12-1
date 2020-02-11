@@ -41,6 +41,11 @@ The interactions are meant to be as intuitive and minimal as possible.
   </li>
   </ol>
 
+  One of the most innovative element is the connection between users. In fact each user can interact with a scribble that is the result of the interaction of another user before him.
+  In this way the platform is a loop of sketches and it connects people simply by sharing and by drawing scribbles.
+  Another innovative challenge is the limit of this connection: you can’t modify the previous sketch but you can only add “creativity” to it.
+
+
 ## Code challenges
 
 <ol>
@@ -96,7 +101,7 @@ The interactions are meant to be as intuitive and minimal as possible.
         })
 
       	server.php
-      	
+
       	 $img = $_ POST['imgBase64'];
        	 $img = str_replace('data:image/png;base64,', '', $img);
        	 $img = str_replace(' ', '+', $img);
@@ -131,7 +136,7 @@ The interactions are meant to be as intuitive and minimal as possible.
   Therefore, with **Composer**, **PHP**, **Heroku** and its optimal communication with repository management directly from Github, we created a totally independent and working php app.
 
     composer.json
-    
+
     {
       "require": {
         "php": "^7.2.0"
