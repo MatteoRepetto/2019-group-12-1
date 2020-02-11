@@ -21,7 +21,7 @@ Here's a gif that shows how our project works:
 
 And here's how the same interface looks like from a mobile phone:
 
-![Screenshot](assets/phone.jpeg)
+![Screenshot](assets/phone.png)
 
 
 
