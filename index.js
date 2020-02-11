@@ -19,11 +19,11 @@ function setup() {
   button1.mousePressed(openScribble);
 
   button2 = createButton("About");
-  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.3);
+  button2.position(windowWidth / 2 - 100, windowHeight / 10 * 6.5);
   button2.mousePressed(openAbout);
 
   button3 = createButton("Creative Coding 2019/2020");
-  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.1);
+  button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.5);
   button3.mousePressed(openCourse);
 
   selectAll("button").forEach(item => {
@@ -59,7 +59,7 @@ function draw() {
     fill("#00ffff");
     ellipse(a, b, 20);
   }
-  
+
   //Logo and resize on mobile devices
   if (windowWidth < 415) {
     logo.resize(windowWidth * 0.7, 0)
