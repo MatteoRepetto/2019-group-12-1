@@ -26,22 +26,17 @@ function draw() {
   //Updating a semitransparent background for a trail effect, which hints at the act of scribbling
   background('rgba(4, 5, 28, 0.05)');
 
+  iterator++;
+  var x = noise(iterator / 200 + 400) * height;
+  var y = (noise(iterator / 500 + 2000) * width) - 300;
+  noStroke();
+  fill("#ff00ff");
+  ellipse(x, y, 20);
 
-  if (windowWidth > 415) {
-    iterator++;
-    var x = noise(iterator / 200 + 400) * height;
-    var y = (noise(iterator / 500 + 2000) * width) - 300;
-    noStroke();
-    fill("#ff00ff");
-    ellipse(x, y, 20);
-
-    var a = 900 + noise(-iterator / 200 + 400) * height;
-    var b = (noise(-iterator / 500 + 2000) * width) - 300;
-    fill("#00ffff");
-    ellipse(a, b, 20);
-  }
-
-
+  var a = 900 + noise(-iterator / 200 + 400) * height;
+  var b = (noise(-iterator / 500 + 2000) * width) - 300;
+  fill("#00ffff");
+  ellipse(a, b, 20);
 
   //Logo
   imageMode(CENTER);
@@ -53,7 +48,7 @@ function draw() {
   image(authors, windowWidth / 2, windowHeight / 10 * 8.2);
 
   //Text
-  push()
+
   fill("#00ffff");
   textFont(myFont2);
   textSize(50);
@@ -89,7 +84,7 @@ function draw() {
   textFont(myFont);
   textSize(20);
   text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12:", windowWidth / 2, windowHeight / 10 * 6.4);
-  pop()
+
 
 }
 
