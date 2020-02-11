@@ -118,7 +118,8 @@ a{
   width:60vw;
   height: 5vh;
   margin-left: 10vw;
-  margin-top: 10vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   padding-top: 1.4vh;
   transition: all 0.3s;
   cursor: pointer;
