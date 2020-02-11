@@ -75,8 +75,11 @@ function draw() {
 
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-  coloreUno = get(fx * 4 + 1, fy * 4 + 1); // pick up the background color
+  coloreUno = get(fx * 4 + 0, fy * 4 + 0); // pick up the background color
   coloreDue = get(fx * 4+4, fy * 4+1); // pick up the stroke color
+
+  ellipse(x * 4 + 0, fy * 4 + 0,3);
+  ellipse(fx * 4+4, fy * 4+1,3);
 
   background(coloreUno);
   print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
