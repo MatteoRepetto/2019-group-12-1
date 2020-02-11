@@ -45,7 +45,8 @@ function draw() {
 
   //Updating a semitransparent background for a trail effect, which hints at the act of scribbling
   background('rgba(4, 5, 28, 0.05)');
-
+  
+  if(windowWidth>415px){
   iterator++;
   var x = noise(iterator / 200 + 400) * height;
   var y = (noise(iterator / 500 + 2000) * width) - 300;
@@ -57,7 +58,7 @@ function draw() {
   var b = (noise(-iterator / 500 + 2000) * width) - 300;
   fill("#00ffff");
   ellipse(a, b, 20);
-
+  }
   //Logo and resize on mobile devices
   if (windowWidth < 400) {
     logo.resize(windowWidth * 0.7, 0)
