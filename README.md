@@ -197,7 +197,7 @@ One of the most innovative elements is the connection between users. In fact eac
 
 This Instagram Story by [Pablo Rochat](http://pablorochat.com) was the very first source of inspiration for our project.
 
-![ScribbleLoopDesktop](assets/example.gif)
+![ScribbleLoopDesktop](assets/rochat.gif)
 
 ## Credits ( third libraries used )
 
