@@ -15,7 +15,7 @@
 
 ## Images
 
-<img src=”./assets/example.gif” alt=”animated” />
+<img src=”assets/example.gif” alt=”animated” />
 
 
 ## Project idea
