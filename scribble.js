@@ -28,10 +28,10 @@ function setup() {
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
   console.log(phpImage);
-  image(img1, 0, 0, 1080 / 5, 1920 / 5)
+  //image(img1, 0, 0, 1080 / 5, 1920 / 5)
   coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
   coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
-  print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
+  //print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
 }
 
 function startPath() {
@@ -75,7 +75,7 @@ function draw() {
   translate(fx * 4, fy * 4); // translate the whole sketch
   scale(1 / k); // scale of the sketch
   background(coloreDue);
-  //image(img1, 0, 0, 1080 / 5, 1920 / 5)
+  image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
   coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
   coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
