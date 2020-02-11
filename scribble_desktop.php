@@ -6,10 +6,6 @@
   <link rel="stylesheet" href="/style.css">
   <style>
 
-    body {
-      background-color: black;
-    }
-
     /* The screen (or content) of the device */
     .content {
       position: absolute;
@@ -17,7 +13,7 @@
       height: 640px;
       background: white;
       left:50%;
-      top: 55%;
+      top: 60%;
       transform: translate(-50%, -50%);
     }
   </style>
