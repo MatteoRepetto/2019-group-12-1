@@ -54,7 +54,7 @@
   <div id="modal">
     <div id="popup">
         <p id="testo">Great Job!</br>Your artwork is ready to be sent to the Loop.</p>
-      <span id="closePopup" onclick="chiudiPopUp" ontouchstart="chiudiPopUp">x</span>
+      <span id="closePopup" onclick="chiudiPopUp()" ontouchstart="chiudiPopUp()">x</span>
 
       <a href="#" id="galleryLink">
         <div id="buttonGallery"  onclick="galleria()" ontouchstart="galleria()">Save in the Loop</div>
