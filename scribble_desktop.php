@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/style.css">
-<style>
+  <title>scribbleLoop | scribble</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <style>
 
-  body {
-    background-color: black;
-  }
+    body {
+      background-color: black;
+    }
 
-  /* The screen (or content) of the device */
-  .content {
-    position: absolute;
-    width: 360px;
-    height: 640px;
-    background: white;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-</style>
+    /* The screen (or content) of the device */
+    .content {
+      position: absolute;
+      width: 360px;
+      height: 640px;
+      background: white;
+      left:50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 
 <body>
