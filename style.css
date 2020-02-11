@@ -30,6 +30,14 @@ h1 {
   font-family: 'circularBold';
 }
 
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+  color: #ff00ff;
+  font-family: 'circularBold';
+}
+
 #mylogo{
   display: block;
   margin-left: auto;
