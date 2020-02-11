@@ -28,9 +28,19 @@ Scribble Loop is a web platform that allows everyone to create infinite drawings
 
 ## Design challenges
 
-The interactions are meant to be as intuitive and minimal as possible.
+The design corporate image is simple and intuitive. We chose bright colors (pink and light blue) on a black background in order to accentuate the bright colors the user will use in its scribbles. The Loop logo represents both the potentially infinite drawings our project is able to create, and the merging (with its gradient) of different people's artworks.
 
-<ol>
+The design interactions are meant to be as intuitive and minimal as possible. The platform is structure into 4 main pages:
+<ul>
+  <li> Home page </li>
+  <li> About </li>
+  <li> Scribble </li>
+  <li> Gallery Loop </li>
+</ul>
+
+In the Home page there are 3 buttons with different function: start the scribble, go to the About page and go to the Course's page.
+The most important page is the Scribble page where the user can draw and express his creativity by interacting with mouse or touch.
+<ul>
   <li>
     <b> Mouse interaction </b></br>
     In the desktop interface the main interaction is with the mouse which becomes the brush. As you enter the scribble sketch, you can simply draw lines by moving the mouse.
@@ -39,11 +49,11 @@ The interactions are meant to be as intuitive and minimal as possible.
     <b> Touch interaction </b></br>
     Touch interaction: On the mobile devices the users can draw by touching the screen.  
   </li>
-  </ol>
+  </ul>
 
-  One of the most innovative element is the connection between users. In fact each user can interact with a scribble that is the result of the interaction of another user before him.
-  In this way the platform is a loop of sketches and it connects people simply by sharing and by drawing scribbles.
-  Another innovative challenge is the limit of this connection: you can’t modify the previous sketch but you can only add “creativity” to it.
+One of the most innovative element is the connection between users. In fact each user can interact with a scribble that is the result of the interaction of another user before him.
+In this way the platform is a loop of sketches and it connects people simply by sharing and by drawing scribbles.
+Another innovative challenge is the limit of this connection: you can’t modify the previous sketch but you can only add “creativity” to it.
 
 
 ## Code challenges
