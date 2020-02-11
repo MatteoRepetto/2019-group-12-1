@@ -15,7 +15,11 @@
 
 ## Images
 
-[...]
+![ScribbleLoopGif](assets/example.gif)
+
+![Screenshot](assets/phone.jpg)
+
+
 
 ## Project idea
 
