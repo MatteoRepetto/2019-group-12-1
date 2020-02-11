@@ -34,6 +34,7 @@ function setup() {
     item.style("border-radius", "6px");
     item.style("font-size", "15px");
     item.style("font-family", "CircularStd-Black");
+    item.style(margin-top: 5vh);
     item.mouseOver(changeColor);
     item.mouseOut(beginningColor);
   });
@@ -59,7 +60,7 @@ function draw() {
     fill("#00ffff");
     ellipse(a, b, 20);
   }
-  
+
   //Logo and resize on mobile devices
   if (windowWidth < 415) {
     logo.resize(windowWidth * 0.7, 0)
