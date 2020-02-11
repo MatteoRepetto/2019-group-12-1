@@ -31,7 +31,6 @@
   <h1 style="position: absolute;  left: 10%; top: 50%;">Try to merge the previous scribble <br> in your own drawing! </br></h1>
   <h2 style="position: absolute;  right: 10%; top: 50%;">When you're done, <br> press the Loop button <br> in the bottom-right corner. </br></h1>
 
-
   <div class="content">
     <iframe src="scribble.php" style="width:100%;border:none;height:100%" />
   </div>

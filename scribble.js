@@ -1,15 +1,15 @@
-var img1;
+var img1; //variable to load the previous scribble
+
+//colors of the scribble
 var coloreUno = '';
 var coloreDue = '';
 
 var path;
 
-var phpImage, pathErase;
+var phpImage;
 
 var drawing = [];
-var drawingErase = [];
 var currentPath = [];
-var currentErase = [];
 var erase = 0;
 var isDrawing = false;
 var isErasing = false;
@@ -27,30 +27,29 @@ function setup() {
   canvas.mousePressed(startPath);
   canvas.parent('createImg');
   canvas.mouseReleased(endPath);
+  canvas.mouseOut(endPath);
   console.log(phpImage);
   //image(img1, 0, 0, 1080 / 5, 1920 / 5)
   //print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
 }
 
+//start drawing, hiding scribble's controller buttons and store the drawn path in the drawing array
 function startPath() {
   $('#controller').fadeOut('fast')
   isDrawing = true;
   currentPath = [];
-  currentErase = [];
   drawing.push(currentPath);
-  drawingErase.push(currentErase);
 }
 
 function touchStarted() {
   $('#controller').fadeOut('fast')
   isDrawing = true;
   currentPath = [];
-  currentErase = [];
   drawing.push(currentPath);
-  drawingErase.push(currentErase);
   return false;
 }
 
+//scribble's controller buttons reapper
 function endPath() {
   $('#controller').fadeIn('fast')
   isDrawing = false;
@@ -61,6 +60,7 @@ function touchEnded() {
   isDrawing = false;
 }
 
+//overwriting the array to delete the scribble just drawn
 function eraseLine() {
   drawing = [];
 }
@@ -85,6 +85,7 @@ function draw() {
   scale(k); // scale of the sketch
   translate(-fx * 4, -fy * 4); // translate of the whole sketch
   noStroke()
+  //creating 2 squares to store the right colors
   fill(coloreUno)
   rect(0, 0, 2, 2)
   fill(coloreDue)
@@ -123,5 +124,4 @@ function draw() {
   scale(1 / k); // scale of the sketch
 
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
-
 }

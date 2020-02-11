@@ -1,12 +1,10 @@
 var myFont;
 var myFont2;
-var myFont3;
 
 function preload() {
 
   myFont = loadFont('./assets/CircularStd-Book.otf');
   myFont2 = loadFont('./assets/CircularStd-Black.otf');
-  myFont3 = loadFont('./assets/CircularStd-BoldItalic.otf');
   logo = loadImage("./assets/logo.png");
   authors = loadImage("./assets/autori.png");
 
@@ -84,7 +82,6 @@ function draw() {
   textFont(myFont);
   textSize(20);
   text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12:", windowWidth / 2, windowHeight / 10 * 6.4);
-
 
 }
 

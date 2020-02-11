@@ -26,6 +26,7 @@ function setup() {
   button3.position(windowWidth / 2 - 100, windowHeight / 10 * 7.5);
   button3.mousePressed(openCourse);
 
+  //same styling through "button" selector
   selectAll("button").forEach(item => {
     item.size(200, 50);
     item.style('background-color', "black");
@@ -93,7 +94,7 @@ function openAbout() {
   window.open("about.php", "_self");
 }
 
-//All these create a hover effect on the buttons
+//All these create an hover effect on the buttons
 function changeColor() {
   this.style('background-color', "#3f3f3f");
 }

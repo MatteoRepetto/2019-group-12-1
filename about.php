@@ -13,6 +13,5 @@
   </head>
   <body>
     <img src="assets/home.png" id="homeButton"  type="button" onclick="window.open('index.php', '_top')"/>
-
   </body>
 </html>
