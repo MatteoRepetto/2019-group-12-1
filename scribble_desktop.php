@@ -17,7 +17,7 @@
       height: 640px;
       background: white;
       left:50%;
-      top: 60%;
+      top: 55%;
       transform: translate(-50%, -50%);
     }
   </style>
