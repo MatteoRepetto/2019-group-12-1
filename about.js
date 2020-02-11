@@ -41,6 +41,8 @@ function draw() {
     ellipse(a, b, 20);
   }
 
+
+
   //Logo
   imageMode(CENTER);
   logo.resize(0, 60);
