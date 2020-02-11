@@ -53,7 +53,7 @@ function draw() {
   image(authors, windowWidth / 2, windowHeight / 10 * 8.2);
 
   //Text
- push()
+  push()
   fill("#00ffff");
   textFont(myFont2);
   textSize(50);
@@ -89,7 +89,7 @@ function draw() {
   textFont(myFont);
   textSize(20);
   text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12:", windowWidth / 2, windowHeight / 10 * 6.4);
-pop()
+  pop()
 
   if (windowWidth < 415) {
     fill("#00ffff");
@@ -122,7 +122,7 @@ pop()
     fill("#00ffff");
     textFont(myFont);
     text("Scribble Loop is a Creative Coding project, created for the 2019/2020 edition of the course. \nIt's made by Group 12:", windowWidth / 2, windowHeight / 10 * 6.4);
-
+  }
 }
 
 function goHome() {
