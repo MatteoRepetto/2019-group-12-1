@@ -46,7 +46,7 @@ function draw() {
   //Updating a semitransparent background for a trail effect, which hints at the act of scribbling
   background('rgba(4, 5, 28, 0.05)');
   
-  if(windowWidth>415px){
+  if(windowWidth>415){
   iterator++;
   var x = noise(iterator / 200 + 400) * height;
   var y = (noise(iterator / 500 + 2000) * width) - 300;
