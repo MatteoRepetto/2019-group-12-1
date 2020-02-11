@@ -7,7 +7,7 @@
   <style>
 
     body {
-      background-color: teal;
+      background-image:url(./assets/pattern.png);
     }
 
     /* The screen (or content) of the device */
