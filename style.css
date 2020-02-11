@@ -6,7 +6,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: linear-gradient(#00ffff, #ff00ff);
+  background: black;
   font-family: 'circularBold'
 }
 
