@@ -16,17 +16,21 @@
 ## Images
 
 Here's a gif that shows how our project works:
+
 ![ScribbleLoopGif](assets/example.gif)
 
 And here's how the same interface looks like from a mobile phone:
-![Screenshot](assets/phone.png)
+
+![Screenshot](assets/phone.jpeg)
 
 
 
 ## Project idea
 
 **What if you could draw an infinite sketch? And what if you could share it with people and collaborate with them to continue their drawings?**
+
 **Scribble Loop** is the answer!
+
 Our inspiration comes from the artist [Pablo Rochat](http://pablorochat.com). He overcomes the limit of the artist canvas by creating an Instagram Stories “game”: he tags an artist in his story and invites him to go on with his first drawing and re-post it.
 
 We started our project inspired by Pablo’s idea and we made it bigger.
@@ -36,7 +40,7 @@ Scribble Loop is a web platform that allows everyone to create infinite drawings
 
 The design corporate image is simple and intuitive. We chose bright colors (pink and light blue) on a black background in order to accentuate the bright colors the user will use in its scribbles. The Loop logo represents both the potentially infinite drawings our project is able to create, and the merging (with its gradient) of different people's artworks.
 
-The design interactions are meant to be as intuitive and minimal as possible. The platform is structure into 4 main pages:
+The design interactions are meant to be as intuitive and minimal as possible. The platform is structured into 4 main pages:
 <ul>
   <li> Home page </li>
   <li> About </li>
@@ -44,7 +48,8 @@ The design interactions are meant to be as intuitive and minimal as possible. Th
   <li> Gallery Loop </li>
 </ul>
 
-In the Home page there are 3 buttons with different function: start the scribble, go to the About page and go to the Course's page.
+In the Home page there are 3 buttons with different functions: start the scribble, go to the About page and go to the Course's page.
+
 The most important page is the Scribble page where the user can draw and express his creativity by interacting with mouse or touch.
 <ul>
   <li>
@@ -53,13 +58,11 @@ The most important page is the Scribble page where the user can draw and express
   </li>
   <li>
     <b> Touch interaction </b></br>
-    Touch interaction: On the mobile devices the users can draw by touching the screen.  
+    On the mobile devices the users can draw by touching the screen.  
   </li>
   </ul>
 
-One of the most innovative element is the connection between users. In fact each user can interact with a scribble that is the result of the interaction of another user before him.
-In this way the platform is a loop of sketches and it connects people simply by sharing and by drawing scribbles.
-Another innovative challenge is the limit of this connection: you can’t modify the previous sketch but you can only add “creativity” to it.
+One of the most innovative elements is the connection between users. In fact each user can interact with a scribble that is the result of the interaction of another user before him. This way the platform is a loop of sketches and it connects people simply by sharing and by drawing scribbles. Other innovative challenges are the limits of this connection: you can’t modify the previous sketch nor his position on yours, but you can only add “creativity” to it, you can't change your brush' color or thickness. Limitations make creativity grow!
 
 
 ## Code challenges
