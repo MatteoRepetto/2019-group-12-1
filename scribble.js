@@ -81,7 +81,7 @@ function draw() {
   fill(255)
   ellipse(fx * 4 + 0, fy * 4 + 0,3);
   ellipse(fx * 4+4, fy * 4+1,3);
-  print(cerchi);
+  print("cerchi");
   pop();
   background(coloreUno);
   print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
