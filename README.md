@@ -15,6 +15,8 @@
 
 ## Images
 
+![homepage](assets/main.png)
+
 ![ScribbleLoopDesktop](assets/example.gif)
 
 ![ScribbleLoopPhone](assets/iphone.gif)
