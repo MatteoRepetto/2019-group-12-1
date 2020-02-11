@@ -92,9 +92,9 @@ function draw() {
   // rect(0, 0, 2, 2)
   // fill(coloreDue)
   // rect(3, 0, 2, 2)
-  rect(1, 1, 3, 3)
+  //rect(1, 1, 3, 3)
   fill(coloreDue)
-  rect(4, 1, 6, 3)
+  //rect(4, 1, 6, 3)
   pop()
 
   pop()
