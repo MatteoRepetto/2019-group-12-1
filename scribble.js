@@ -70,19 +70,15 @@ console.log(Math.round(fx), Math.round(fy), Math.round(k));
 function draw() {
 
   push()
+  image(img1, 0, 0, 1080 / 5, 1920 / 5)
+  coloreUno = get(0, 0);
+  coloreDue = get(4, 0);
+
   translate(fx * 4, fy * 4); // translate the whole sketch
   scale(1 / k); // scale of the sketch
 
-  image(img1, 0, 0, 1080 / 5, 1920 / 5)
-
-  coloreUno = get(fx * 4 + 1, fy * 4 + 1); // pick up the background color
-  coloreDue = get(fx * 4+4, fy * 4+1); // pick up the stroke color
-  push();
-  fill(255)
-  ellipse(fx * 4 + 0, fy * 4 + 0,3);
-  ellipse(fx * 4+4, fy * 4+1,3);
   print("cerchiolini");
-  pop();
+
   background(coloreUno);
   print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
 
