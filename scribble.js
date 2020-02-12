@@ -32,6 +32,7 @@ function setup() {
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
   coloreUno = get(0, 0);
   coloreDue = get(3, 0);
+  print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
   //image(img1, 0, 0, 1080 / 5, 1920 / 5)
   //print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
 }
@@ -79,7 +80,7 @@ function draw() {
     image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
     background(coloreUno);
-    print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
+
 
     push()
       scale(k); // scale of the sketch
