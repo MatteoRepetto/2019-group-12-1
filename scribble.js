@@ -29,6 +29,9 @@ function setup() {
   canvas.mouseReleased(endPath);
   canvas.mouseOut(endPath);
   console.log(phpImage);
+  image(img1, 0, 0, 1080 / 5, 1920 / 5)
+  coloreUno = get(0, 0);
+  coloreDue = get(4, 0);
   //image(img1, 0, 0, 1080 / 5, 1920 / 5)
   //print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
 }
@@ -70,56 +73,50 @@ console.log(Math.round(fx), Math.round(fy), Math.round(k));
 function draw() {
 
   push()
-  image(img1, 0, 0, 1080 / 5, 1920 / 5)
-  coloreUno = get(0, 0);
-  coloreDue = get(4, 0);
+    translate(fx * 4, fy * 4); // translate the whole sketch
+    scale(1 / k); // scale of the sketch
 
-  translate(fx * 4, fy * 4); // translate the whole sketch
-  scale(1 / k); // scale of the sketch
+    image(img1, 0, 0, 1080 / 5, 1920 / 5)
 
-  print("cerchiolini");
+    background(coloreUno);
+    print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
 
-  background(coloreUno);
-  print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
-
-  push()
-  scale(k); // scale of the sketch
-  translate(-fx * 4, -fy * 4); // translate of the whole sketch
-  noStroke()
-  //creating 2 squares to store the right colors
-  // fill(coloreUno)
-  // rect(0, 0, 2, 2)
-  // fill(coloreDue)
-  // rect(3, 0, 3, 2)
-  pop()
-
+    push()
+      scale(k); // scale of the sketch
+      translate(-fx * 4, -fy * 4); // translate of the whole sketch
+      noStroke()
+      //creating 2 squares to store the right colors
+      // fill(coloreUno)
+      // rect(0, 0, 2, 2)
+      // fill(coloreDue)
+      // rect(3, 0, 3, 2)
+    pop()
   pop()
   push()
-  translate(fx, fy); // translate of the whole sketch
-  scale(1 / k); // scale of the sketch
+    translate(fx, fy); // translate of the whole sketch
+    scale(1 / k); // scale of the sketch
 
-  if (isDrawing) {
-    var point = {
-      x: (mouseX - fx) * k, // compensation of translate and previous sketch, both in x and in y
-      y: (mouseY - fy) * k
-    };
-    currentPath.push(point);
-  }
-
-  stroke(coloreDue);
-  strokeWeight(5);
-  noFill();
-
-  for (var i = 0; i < drawing.length; i++) {
-    path = drawing[i];
-    beginShape();
-    for (var j = 0; j < path.length; j++) {
-      vertex(path[j].x, path[j].y);
+    if (isDrawing) {
+      var point = {
+        x: (mouseX - fx) * k, // compensation of translate and previous sketch, both in x and in y
+        y: (mouseY - fy) * k
+      };
+      currentPath.push(point);
     }
-    endShape();
-  }
-  pop()
 
+    stroke(coloreDue);
+    strokeWeight(5);
+    noFill();
+
+    for (var i = 0; i < drawing.length; i++) {
+      path = drawing[i];
+      beginShape();
+      for (var j = 0; j < path.length; j++) {
+        vertex(path[j].x, path[j].y);
+      }
+      endShape();
+    }
+  pop()
 
   translate(fx * 4, fy * 4); // translate of the whole sketch
   scale(1 / k); // scale of the sketch
