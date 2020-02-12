@@ -120,7 +120,5 @@ function draw() {
     rect(0, 0, 3, 3)
     fill(coloreUno)
     rect(3, 0, 6, 3)
-    fill(coloreDue)
-    rect(6, 0, 9, 3)
   pop()
 }
