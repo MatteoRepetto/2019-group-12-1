@@ -172,25 +172,28 @@ One of the most innovative elements is the connection between users. In fact eac
   <b>Keeping track of the color's switching</b></br>
   Keeping track of the color was one of the hardest challenge of the project. We considered to create a json for the storage of the colors, but it was an unsuitable solution for a project that aims to create infinite sketches. We also considered to create a sort of metadatas, thanks to the imgBase64 structure which allows, but it was exif matadata, so hardly storable in long sequences.
 
-  We found a solution which allows us to not store the information in an external file, having at the same time a nice level of precision. We drawn two small square of 2 pixels per side in the top-left corner of the 10 initial sketches, and thanks to the get function we could “read” the color and assign their values to the variables coloreUno and coloreDue. With this method we had solved the problem of keeping the colors, without increasing the sizes of the files and the information to read.
+  We found a solution which allows us to not store the information in an external file, having at the same time a nice level of precision. We drawn two small square of 3 pixels per side in the top-left corner of the 10 initial sketches, and thanks to the get function we could “read” the color and assign their values to the variables coloreUno and coloreDue. With this method we had solved the problem of keeping the colors, without increasing the sizes of the files and the information to read.
 
-      image(img1, 0, 0, 1080 / 5, 1920 / 5)
+      function setup(){
+        image(img1, 0, 0, 1080 / 5, 1920 / 5)
+        coloreUno = get(0, 0) //pick up the background color
+        coloreDue = get(3, 0) //pick up the stroke color
+      }
+      
+      fuction draw(){
+        background(coloreUno);
+        print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
 
-      coloreUno = get(fx * 4 + 2, fy * 4 + 1); // pick up the background color
-      coloreDue = get(fx * 4, fy * 4); // pick up the stroke color
-
-      background(coloreDue);
-      print("coloreUno: " + coloreUno, "coloreDue: " + coloreDue);
-
-      push()
-      scale(k); // scale of the sketch
-      translate(-fx * 4, -fy * 4); // translate of the whole sketch
-      noStroke()
-      fill(coloreUno)
-      rect(0, 0, 2, 2)
-      fill(coloreDue)
-      rect(3, 0, 2, 2)
-      pop()
+        push()
+        scale(k); // scale of the sketch
+        translate(-fx * 4, -fy * 4); // translate of the whole sketch
+        noStroke()
+        fill(coloreDue)
+        rect(0, 0, 3, 3)
+        fill(coloreUno)
+        rect(3, 0, 6, 3)
+        pop()
+       }
 
  </li>
 </ol>
