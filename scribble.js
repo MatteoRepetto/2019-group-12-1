@@ -117,8 +117,8 @@ function draw() {
     noStroke()
     //creating 2 squares to store the right colors
     fill(coloreUno)
-    rect(0, 0, 3, 3)
+    rect(0, 0, 2, 3)
     fill(coloreDue)
-    rect(4, 0, 6, 3)
+    rect(3, 0, 5, 3)
   pop()
 }
