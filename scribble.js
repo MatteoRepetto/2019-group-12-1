@@ -31,7 +31,7 @@ function setup() {
   console.log(phpImage);
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
   coloreUno = get(0, 0);
-  coloreDue = get(4, 0);
+  coloreDue = get(3, 0);
   //image(img1, 0, 0, 1080 / 5, 1920 / 5)
   //print("ScoloreUno: " + coloreUno, "ScoloreDue: " + coloreDue);
 }
