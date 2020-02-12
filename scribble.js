@@ -79,17 +79,8 @@ function draw() {
 
     background(coloreUno);
 
-    push()
-      scale(k); // scale of the sketch
-      translate(-fx * 4, -fy * 4); // translate of the whole sketch
-      noStroke()
-      //creating 2 squares to store the right colors
-      fill(coloreUno)
-      rect(0, 0, 3, 3)
-      fill(coloreDue)
-      rect(4, 0, 6, 3)
-    pop()
   pop()
+
   push()
     translate(fx, fy); // translate of the whole sketch
     scale(1 / k); // scale of the sketch
@@ -120,4 +111,14 @@ function draw() {
   scale(1 / k); // scale of the sketch
 
   image(img1, 0, 0, 1080 / 5, 1920 / 5)
+  push()
+    scale(k); // scale of the sketch
+    translate(-fx * 4, -fy * 4); // translate of the whole sketch
+    noStroke()
+    //creating 2 squares to store the right colors
+    fill(coloreUno)
+    rect(0, 0, 3, 3)
+    fill(coloreDue)
+    rect(4, 0, 6, 3)
+  pop()
 }
