@@ -9,8 +9,7 @@
 
     body {
         background-image:url(./assets/pattern.png);
-        height: 100%;
-        background-size: cover;
+        background-repeat: repeat;
     }
 
     /* The screen (or content) of the device */
